@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is Steiner Triple System? | Joshua Ganschow Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">Joshua Ganschow</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../tools.html">Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="container mt-5 pt-5">
+        <h2>Is Steiner Triple System?</h2>
+        <p>Check if your set of points and triples forms a valid Steiner Triple System.</p>
+        
+        <form id="stsCheckForm">
+            <div class="mb-3">
+                <label for="pointsInput" class="form-label">Points</label>
+                <input type="text" class="form-control" id="pointsInput" placeholder="e.g., 1,2,3,4,5,6,7" required>
+                <div class="form-text">Enter points separated by commas.</div>
+            </div>
+            <div class="mb-3">
+                <label for="triplesInput" class="form-label">Triples</label>
+                <input type="text" class="form-control" id="triplesInput" placeholder="e.g., 1-2-3,1-4-5,1-6-7" required>
+                <div class="form-text">Enter triples separated by commas. Each triple should have three points separated by hyphens.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Check</button>
+        </form>
+        
+        <hr>
+        
+        <h3>Result:</h3>
+        <pre id="stsResult"></pre>
+    </div>
+    
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="../assets/js/script.js"></script>
+    
+    <!-- Steiner Triple System Checker JS -->
+    <script src="../assets/js/sts-checker.js"></script>
+    
+    <!-- Tool-Specific JS -->
+    <script>
+        document.getElementById('stsCheckForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const pointsInput = document.getElementById('pointsInput').value.trim();
+            const triplesInput = document.getElementById('triplesInput').value.trim();
+            const resultOutput = document.getElementById('stsResult');
+            
+            // Parse points
+            const points = pointsInput.split(',').map(p => parseInt(p.trim())).filter(p => !isNaN(p));
+            
+            // Parse triples
+            const triples = triplesInput.split(',').map(tripleStr => {
+                return tripleStr.split('-').map(t => parseInt(t.trim())).filter(t => !isNaN(t));
+            }).filter(triple => triple.length === 3);
+            
+            // Validate input
+            if (points.length === 0) {
+                resultOutput.textContent = 'Please enter at least one point.';
+                return;
+            }
+            if (triples.length === 0) {
+                resultOutput.textContent = 'Please enter at least one valid triple.';
+                return;
+            }
+            
+            try {
+                const isValid = isSteinerTripleSystem(points, triples);
+                if (isValid) {
+                    resultOutput.textContent = '✅ The provided points and triples form a valid Steiner Triple System.';
+                } else {
+                    resultOutput.textContent = '❌ The provided points and triples do NOT form a valid Steiner Triple System.';
+                }
+            } catch (error) {
+                resultOutput.textContent = `Error: ${error.message}`;
+            }
+        });
+    </script>
+</body>
+</html>

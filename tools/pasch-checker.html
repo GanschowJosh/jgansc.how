@@ -11,10 +11,10 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-<body>
+<body class="light-mode">
     
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">Joshua Ganschow</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
@@ -22,7 +22,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
                         <a class="nav-link" href="../projects.html">Projects</a>
                     </li>
@@ -31,6 +31,13 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../about.html">About</a>
+                    </li>
+                    <!-- Dark Mode Toggle Switch -->
+                    <li class="nav-item">
+                        <div class="form-check form-switch ms-3">
+                            <input class="form-check-input" type="checkbox" id="darkModeToggle">
+                            <label class="form-check-label" for="darkModeToggle">Dark Mode</label>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -126,6 +133,34 @@
                 document.getElementById('triplesInput').value = exampleTriplesAntiPasch;
                 handlePaschCheck(exampleTriplesAntiPasch);
             }
+        });
+
+        // Initialize Dark Mode Toggle
+        // Ensure this script runs after the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleSwitch = document.getElementById('darkModeToggle');
+            if (!toggleSwitch) return; // Exit if no toggle exists
+
+            const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light-mode';
+
+            document.body.classList.add(currentTheme);
+            if (currentTheme === 'dark-mode') {
+                toggleSwitch.checked = true;
+            } else {
+                toggleSwitch.checked = false;
+            }
+
+            toggleSwitch.addEventListener('change', function() {
+                if (this.checked) {
+                    document.body.classList.remove('light-mode');
+                    document.body.classList.add('dark-mode');
+                    localStorage.setItem('theme', 'dark-mode');
+                } else {
+                    document.body.classList.remove('dark-mode');
+                    document.body.classList.add('light-mode');
+                    localStorage.setItem('theme', 'light-mode');
+                }
+            }, false);
         });
     </script>
 </body>

@@ -90,8 +90,6 @@
                 const triplesString = generateSteinerTripleSystem(v);
                 resultOutput.textContent = `Steiner Triple System of order ${v}:\n${triplesString}`;
                 
-                // Visualize the triples (Optional)
-                visualizeSTS(triplesString);
             } catch (error) {
                 resultOutput.textContent = error.message;
             }

@@ -94,17 +94,58 @@ body.dark-mode .btn-secondary:hover {
   border-color: #018786;
 }
 
-/* Form Labels */
-.form-label {
-  color: #e0e0e0;
+/* Project Cards */
+body.light-mode .card {
+  background-color: #ffffff;
+  color: #121212;
+  border: 1px solid #dee2e6;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
-/* Form Controls */
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border: 1px solid #3e3e3e;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+body.light-mode .card-img-top {
+  filter: brightness(100%);
+  transition: filter 0.3s;
+}
+
+body.dark-mode .card-img-top {
+  filter: brightness(0.8);
+  transition: filter 0.3s;
+}
+
+/* Button Text Colors */
+body.dark-mode .btn-primary,
+body.dark-mode .btn-secondary {
+  color: #ffffff; /* Ensure button text is white in dark mode */
+}
+
+body.light-mode .btn-primary,
+body.light-mode .btn-secondary {
+  color: #ffffff; /* Keep button text white in light mode for contrast */
+}
+
+/* Additional Styles for Forms, Tables, etc. */
+.form-label {
+  color: inherit;
+}
+
 .form-control {
   background-color: #1e1e1e;
   color: #e0e0e0;
   border: 1px solid #3e3e3e;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+body.light-mode .form-control {
+  background-color: #ffffff;
+  color: #121212;
+  border-color: #ced4da;
 }
 
 .form-control:focus {
@@ -114,63 +155,19 @@ body.dark-mode .btn-secondary:hover {
   box-shadow: none;
 }
 
+body.light-mode .form-control:focus {
+  background-color: #ffffff;
+  color: #121212;
+  border-color: #80bdff;
+  box-shadow: none;
+}
+
 /* Placeholder Text */
 ::placeholder {
   color: #757575;
+  opacity: 1; /* Firefox */
 }
 
-/* Link Styles */
-a {
-  color: var(--link-color);
-  transition: color 0.3s;
-}
-
-a:hover {
-  color: var(--link-hover-color);
-  text-decoration: underline;
-}
-
-/* Button Styles */
-.btn-primary {
-  background-color: var(--button-primary-bg);
-  border-color: var(--button-primary-border);
-  transition: background-color 0.3s, border-color 0.3s;
-}
-
-.btn-primary:hover {
-  background-color: var(--button-primary-hover-bg);
-  border-color: var(--button-primary-hover-border);
-}
-
-.btn-secondary {
-  background-color: var(--button-secondary-bg);
-  border-color: var(--button-secondary-border);
-  transition: background-color 0.3s, border-color 0.3s;
-}
-
-.btn-secondary:hover {
-  background-color: var(--button-secondary-hover-bg);
-  border-color: var(--button-secondary-hover-border);
-}
-
-/* Table Styles */
-table {
-  background-color: #1e1e1e;
-  color: #e0e0e0;
-}
-
-th, td {
-  border-color: #3e3e3e;
-}
-
-thead {
-  background-color: #333333;
-}
-
-tr:nth-child(even) {
-  background-color: #2c2c2c;
-}
-
-tr:hover {
-  background-color: #3a3a3a;
+body.light-mode ::placeholder {
+  color: #6c757d;
 }

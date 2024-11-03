@@ -13,7 +13,7 @@
 </head>
 <body class="light-mode">
     
-    <!-- Navbar -->
+    <!-- Navbar with Dark Mode Toggle -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">Joshua Ganschow</a>
@@ -100,8 +100,8 @@
             }
             
             try {
-                const isAntiPasch = isAntiPasch(triples);
-                if (isAntiPasch) {
+                const isAntiPaschResult = window.isAntiPasch(triples); // Ensure global access
+                if (isAntiPaschResult) {
                     paschResult.textContent = '✅ The provided Steiner Triple System is anti-Pasch (contains no Pasch configurations).';
                 } else {
                     paschResult.textContent = '❌ The provided Steiner Triple System contains Pasch configurations.';
@@ -135,7 +135,7 @@
             }
         });
 
-        // Initialize Dark Mode Toggle
+        // Initialize Dark Mode Toggle (from script.js)
         // Ensure this script runs after the DOM is fully loaded
         document.addEventListener('DOMContentLoaded', () => {
             const toggleSwitch = document.getElementById('darkModeToggle');

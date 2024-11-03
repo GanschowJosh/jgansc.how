@@ -3,18 +3,24 @@
   /* Light Mode Variables */
   --background-color: #ffffff;
   --text-color: #121212;
-  --link-color: #7c75c7;
+  --link-color: #1a0dab;
   --link-hover-color: #c61aff;
   --navbar-bg: #f8f9fa;
   --navbar-text: #121212;
-  --button-primary-bg: #1a73e8;
-  --button-primary-border: #1a73e8;
-  --button-primary-hover-bg: #1669c1;
-  --button-primary-hover-border: #1669c1;
-  --button-secondary-bg: #e0e0e0;
-  --button-secondary-border: #e0e0e0;
-  --button-secondary-hover-bg: #c6c6c6;
-  --button-secondary-hover-border: #c6c6c6;
+  --card-bg: #ffffff;
+  --card-text: #121212;
+  --card-border: #dee2e6;
+  --card-hover-bg: #f1f1f1;
+  --card-hover-text: #121212;
+  --btn-primary-bg: #1a73e8;
+  --btn-primary-border: #1a73e8;
+  --btn-primary-hover-bg: #1669c1;
+  --btn-primary-hover-border: #1669c1;
+  --btn-secondary-bg: #6c757d;
+  --btn-secondary-border: #6c757d;
+  --btn-secondary-hover-bg: #5a6268;
+  --btn-secondary-hover-border: #545b62;
+  /* Add more variables as needed */
 }
 
 body.light-mode {
@@ -35,24 +41,36 @@ body.light-mode .navbar {
   color: var(--navbar-text);
 }
 
+body.light-mode .card {
+  background-color: var(--card-bg);
+  color: var(--card-text);
+  border: 1px solid var(--card-border);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+body.light-mode .card:hover {
+  background-color: var(--card-hover-bg);
+  color: var(--card-hover-text);
+}
+
 body.light-mode .btn-primary {
-  background-color: var(--button-primary-bg);
-  border-color: var(--button-primary-border);
+  background-color: var(--btn-primary-bg);
+  border-color: var(--btn-primary-border);
 }
 
 body.light-mode .btn-primary:hover {
-  background-color: var(--button-primary-hover-bg);
-  border-color: var(--button-primary-hover-border);
+  background-color: var(--btn-primary-hover-bg);
+  border-color: var(--btn-primary-hover-border);
 }
 
 body.light-mode .btn-secondary {
-  background-color: var(--button-secondary-bg);
-  border-color: var(--button-secondary-border);
+  background-color: var(--btn-secondary-bg);
+  border-color: var(--btn-secondary-border);
 }
 
 body.light-mode .btn-secondary:hover {
-  background-color: var(--button-secondary-hover-bg);
-  border-color: var(--button-secondary-hover-border);
+  background-color: var(--btn-secondary-hover-bg);
+  border-color: var(--btn-secondary-hover-border);
 }
 
 /* Dark Mode Overrides */
@@ -74,60 +92,40 @@ body.dark-mode .navbar {
   color: #e0e0e0;
 }
 
+body.dark-mode .card {
+  background-color: #1e1e1e; /* Dark background */
+  color: #e0e0e0;            /* Light text */
+  border: 1px solid #3e3e3e; /* Darker border */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+body.dark-mode .card:hover {
+  background-color: #333333; /* Slightly lighter dark background on hover */
+  color: #ffffff;            /* White text on hover */
+}
+
 body.dark-mode .btn-primary {
   background-color: #bb86fc;
   border-color: #bb86fc;
+  color: #ffffff; /* Ensure button text is white */
 }
 
 body.dark-mode .btn-primary:hover {
   background-color: #3700b3;
   border-color: #3700b3;
+  color: #ffffff; /* Ensure button text remains white on hover */
 }
 
 body.dark-mode .btn-secondary {
   background-color: #03dac6;
   border-color: #03dac6;
+  color: #ffffff; /* Ensure button text is white */
 }
 
 body.dark-mode .btn-secondary:hover {
   background-color: #018786;
   border-color: #018786;
-}
-
-/* Project Cards */
-body.light-mode .card {
-  background-color: #ffffff;
-  color: #121212;
-  border: 1px solid #dee2e6;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-}
-
-body.dark-mode .card {
-  background-color: #1e1e1e;
-  color: #e0e0e0;
-  border: 1px solid #3e3e3e;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-}
-
-body.light-mode .card-img-top {
-  filter: brightness(100%);
-  transition: filter 0.3s;
-}
-
-body.dark-mode .card-img-top {
-  filter: brightness(0.8);
-  transition: filter 0.3s;
-}
-
-/* Button Text Colors */
-body.dark-mode .btn-primary,
-body.dark-mode .btn-secondary {
-  color: #000000; /* Ensure button text is white in dark mode */
-}
-
-body.light-mode .btn-primary,
-body.light-mode .btn-secondary {
-  color: #ffffff; /* Keep button text white in light mode for contrast */
+  color: #ffffff; /* Ensure button text remains white on hover */
 }
 
 /* Additional Styles for Forms, Tables, etc. */
@@ -170,4 +168,24 @@ body.light-mode .form-control:focus {
 
 body.light-mode ::placeholder {
   color: #6c757d;
+}
+
+/* Images within cards */
+body.light-mode .card-img-top {
+  filter: brightness(100%);
+  transition: filter 0.3s;
+}
+
+body.dark-mode .card-img-top {
+  filter: brightness(0.8);
+  transition: filter 0.3s;
+}
+
+/* Add transition effects */
+body {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar, .btn-primary, .btn-secondary, .form-control, a {
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }

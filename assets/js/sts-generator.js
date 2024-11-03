@@ -151,7 +151,8 @@ class SteinerTripleSystem {
         while (this.NumBlocks < targetBlocks) {
             this.RevisedSwitch();
         }
-        return this.ConstructBlocks();
+        const triples = this.ConstructBlocks();
+        return formatTriples(triples); // Return formatted string
     }
 
     // Helper function to get random integer between min and max inclusive
@@ -174,11 +175,30 @@ class SteinerTripleSystem {
     }
 }
 
-// Function to check if a given v is valid for an order of a Steiner Triple System
+/**
+ * Function to format triples into a string with triples separated by commas and points separated by hyphens
+ * @param {Array} triples - An array of triples, each triple is an array of three integers
+ * @returns {String} - Formatted string (e.g., "1-2-3,1-4-5,1-6-7")
+ */
+function formatTriples(triples) {
+    return triples.map(triple => triple.join('-')).join(',');
+}
+
+/**
+ * Function to check if a given v is valid for an order of a Steiner Triple System
+ * @param {Number} v - Order of the system
+ * @returns {Boolean} - Returns true if valid, else false
+ */
 function isValidOrder(v) {
     return v % 6 === 1 || v % 6 === 3;
 }
 
+/**
+ * Function to generate Steiner Triple System and return formatted string
+ * @param {Number} v - Order of the system
+ * @returns {String} - Formatted triples string
+ * @throws {Error} - If the order is invalid
+ */
 function generateSteinerTripleSystem(v) {
     if (!isValidOrder(v)) {
         throw new Error(`${v} is not a valid order for a Steiner Triple System`);
@@ -187,15 +207,20 @@ function generateSteinerTripleSystem(v) {
     return sts.RevisedStinsonsAlgorithm();
 }
 
-// Function to check if a set of points and triples is a Steiner Triple System
+/**
+ * Function to check if a set of points and triples is a Steiner Triple System
+ * @param {Array} points - An array of points (integers)
+ * @param {Array} triples - An array of triples, each triple is an array of three integers
+ * @returns {Boolean} - Returns true if it's a valid Steiner Triple System, else false
+ */
 function isSteinerTripleSystem(points, triples) {
-    // Create a set of all triples
+    // Create a set of all triples using frozenset equivalent
     let triples_set = new Set(triples.map(triple => frozenset(triple)));
 
     // Check if every pair of points appears in exactly one triple
     for (let i = 0; i < points.length; i++) {
         for (let j = i + 1; j < points.length; j++) {
-            let pair = new Set([points[i], points[j]]);
+            let pair = frozenset([points[i], points[j]]);
             let count = 0;
             triples_set.forEach(triple => {
                 if (isSubset(pair, triple)) {
@@ -210,7 +235,7 @@ function isSteinerTripleSystem(points, triples) {
 
     // Check if the order of the system is congruent to 1 or 3 modulo 6
     let order = points.length;
-    if (!isValidOrder(order)) {
+    if (!(order % 6 === 1 || order % 6 === 3)) {
         return false;
     }
 
@@ -218,17 +243,23 @@ function isSteinerTripleSystem(points, triples) {
     return true;
 }
 
-// Helper function to create a unique identifier for a set
+/**
+ * Helper function to create a unique identifier for a set (similar to Python's frozenset)
+ * @param {Array} arr - An array of elements
+ * @returns {String} - A JSON string representing the sorted set
+ */
 function frozenset(arr) {
-    return JSON.stringify([...arr].sort((a, b) => a - b));
+    return JSON.stringify([...new Set(arr)].sort((a, b) => a - b));
 }
 
-// Helper function to check if subset is in superset
-function isSubset(subset, superset) {
-    for (let elem of subset) {
-        if (!superset.has(elem)) {
-            return false;
-        }
-    }
-    return true;
+/**
+ * Helper function to check if all elements of subset are in superset
+ * @param {String} subsetStr - JSON string of the subset
+ * @param {String} supersetStr - JSON string of the superset
+ * @returns {Boolean} - Returns true if subset is indeed a subset of superset
+ */
+function isSubset(subsetStr, supersetStr) {
+    let subset = JSON.parse(subsetStr);
+    let superset = JSON.parse(supersetStr);
+    return subset.every(elem => superset.includes(elem));
 }

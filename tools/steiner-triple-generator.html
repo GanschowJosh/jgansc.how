@@ -1,95 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Steiner Triple Systems Generator | Joshua Ganschow Portfolio</title>
-  
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="../assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steiner Triple Systems Generator | Joshua Ganschow Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-  
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="../index.html">Joshua Ganschow</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="../projects.html">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../tools.html">Tools</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../about.html">About</a>
-          </li>
-        </ul>
-      </div>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">Joshua Ganschow</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../tools.html">Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="container mt-5 pt-5">
+        <h2>Steiner Triple Systems Generator</h2>
+        <p>Generate Steiner Triple Systems by inputting the desired order.</p>
+        
+        <form id="steinerForm">
+            <div class="mb-3">
+                <label for="orderInput" class="form-label">Order (v)</label>
+                <input type="number" class="form-control" id="orderInput" min="1" required>
+                <div class="form-text">Enter a positive integer where v ≡ 1 or 3 mod 6.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Generate</button>
+        </form>
+        
+        <hr>
+        
+        <h3>Result:</h3>
+        <pre id="resultOutput"></pre>
     </div>
-  </nav>
-  
-  <!-- Main Content -->
-  <div class="container mt-5 pt-5">
-    <h2>Steiner Triple Systems Generator</h2>
-    <p>Generate Steiner Triple Systems by inputting the desired order.</p>
     
-    <form id="steinerForm">
-      <div class="mb-3">
-        <label for="orderInput" class="form-label">Order (n)</label>
-        <input type="number" class="form-control" id="orderInput" min="3" required>
-        <div class="form-text">Enter a positive integer greater than or equal to 3.</div>
-      </div>
-      <button type="submit" class="btn btn-primary">Generate</button>
-    </form>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <hr>
+    <!-- Steiner Triple Systems Generator JS -->
+    <script src="../assets/js/sts-generator.js"></script>
     
-    <h3>Result:</h3>
-    <pre id="resultOutput"></pre>
-  </div>
-  
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <!-- Custom JS -->
-  <script src="../assets/js/script.js"></script>
-  
-  <!-- Tool-Specific JS -->
-  <script>
-    document.getElementById('steinerForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const n = parseInt(document.getElementById('orderInput').value);
-      if (n < 3) {
-        document.getElementById('resultOutput').textContent = 'Order must be at least 3.';
-        return;
-      }
-      // Implement the Steiner Triple Systems generation logic in JavaScript
-      // This is a placeholder implementation
-      const result = generateSteinerTripleSystem(n);
-      document.getElementById('resultOutput').textContent = JSON.stringify(result, null, 2);
-    });
-    
-    function generateSteinerTripleSystem(n) {
-      // Placeholder: Implement your actual algorithm here
-      // For demonstration, returning a dummy object
-      return {
-        order: n,
-        triples: [
-          [1, 2, 3],
-          [1, 4, 5],
-          // Add more triples based on the algorithm
-        ]
-      };
-    }
-  </script>
+    <!-- Tool-Specific JS -->
+    <script>
+        document.getElementById('steinerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const v = parseInt(document.getElementById('orderInput').value);
+            const resultOutput = document.getElementById('resultOutput');
+            if (isNaN(v) || v < 1) {
+                resultOutput.textContent = 'Please enter a valid positive integer for the order.';
+                return;
+            }
+            try {
+                const triples = generateSteinerTripleSystem(v);
+                // Format the triples for display
+                const formattedTriples = triples.map(triple => `[${triple.join(', ')}]`).join('\n');
+                resultOutput.textContent = `Steiner Triple System of order ${v}:\n${formattedTriples}`;
+            } catch (error) {
+                resultOutput.textContent = error.message;
+            }
+        });
+    </script>
 </body>
 </html>

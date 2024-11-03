@@ -1,0 +1,12 @@
+/* Adjust body padding to account for fixed navbar */
+body {
+    padding-top: 70px;
+  }
+  
+  /* Customize the jumbotron */
+  .jumbotron {
+    background-color: #f8f9fa;
+    padding: 2rem 1rem;
+    border-radius: 0.3rem;
+  }
+  

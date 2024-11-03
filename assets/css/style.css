@@ -122,7 +122,7 @@ body.dark-mode .card-img-top {
 /* Button Text Colors */
 body.dark-mode .btn-primary,
 body.dark-mode .btn-secondary {
-  color: #ffffff; /* Ensure button text is white in dark mode */
+  color: #000000; /* Ensure button text is white in dark mode */
 }
 
 body.light-mode .btn-primary,

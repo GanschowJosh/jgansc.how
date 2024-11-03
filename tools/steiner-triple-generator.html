@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steiner Triple Systems Generator | JG Anscombe Portfolio</title>
+    <title>Steiner Triple Systems Generator | Joshua Ganschow Portfolio</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,7 +16,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html">JG Anscombe</a>
+            <a class="navbar-brand" href="../index.html">Joshua Ganschow</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -56,6 +56,9 @@
         
         <h3>Result:</h3>
         <pre id="resultOutput"></pre>
+        
+        <!-- Optional: Visualization Container -->
+        <div id="cy" style="width: 100%; height: 600px; margin-top: 20px;"></div>
     </div>
     
     <!-- Bootstrap JS Bundle -->
@@ -64,15 +67,21 @@
     <!-- Steiner Triple Systems Generator JS -->
     <script src="../assets/js/sts-generator.js"></script>
     
+    <!-- Cytoscape.js for Visualization (Optional) -->
+    <script src="https://unpkg.com/cytoscape@3.20.0/dist/cytoscape.min.js"></script>
+    
     <!-- Custom JS -->
     <script src="../assets/js/script.js"></script>
     
     <!-- Tool-Specific JS -->
     <script>
-        document.getElementById('steinerForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const v = parseInt(document.getElementById('orderInput').value);
+        /**
+         * Handler function for form submission and Load Example button
+         */
+        function handleSteinerFormSubmit(v) {
             const resultOutput = document.getElementById('resultOutput');
+            const cyContainer = document.getElementById('cy');
+            
             if (isNaN(v) || v < 1) {
                 resultOutput.textContent = 'Please enter a valid positive integer for the order.';
                 return;
@@ -80,21 +89,97 @@
             try {
                 const triplesString = generateSteinerTripleSystem(v);
                 resultOutput.textContent = `Steiner Triple System of order ${v}:\n${triplesString}`;
+                
+                // Visualize the triples (Optional)
+                visualizeSTS(triplesString);
             } catch (error) {
                 resultOutput.textContent = error.message;
             }
+        }
+
+        // Attach submit event listener to the form
+        document.getElementById('steinerForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+            const v = parseInt(document.getElementById('orderInput').value);
+            handleSteinerFormSubmit(v);
         });
 
-        // Example input loader
+        // Attach click event listener to the Load Example button
         document.getElementById('loadExample').addEventListener('click', function() {
             document.getElementById('orderInput').value = '7';
-            const exampleTriples = '1-2-3,1-4-5,1-6-7,2-4-6,2-5-7,3-4-7,3-5-6';
-            // Optionally, you can auto-fill triples if you have an interface for it
-            // For this generator, it only generates based on order, so no need
-            // Just run the generator
-            const event = new Event('submit');
-            document.getElementById('steinerForm').dispatchEvent(event);
+            handleSteinerFormSubmit(7);
         });
+
+        /**
+         * Function to visualize Steiner Triple System using Cytoscape.js (Optional)
+         * @param {String} triplesStr - Formatted triples string (e.g., "1-2-3,1-4-5,1-6-7")
+         */
+        function visualizeSTS(triplesStr) {
+            const triples = triplesStr.split(',').map(tripleStr => tripleStr.split('-').map(Number));
+            const elements = [];
+    
+            triples.forEach(triple => {
+                const [a, b, c] = triple;
+                // Add nodes
+                elements.push({ data: { id: a.toString() } });
+                elements.push({ data: { id: b.toString() } });
+                elements.push({ data: { id: c.toString() } });
+                // Add edges
+                elements.push({ data: { source: a.toString(), target: b.toString() } });
+                elements.push({ data: { source: a.toString(), target: c.toString() } });
+                elements.push({ data: { source: b.toString(), target: c.toString() } });
+            });
+    
+            // Remove duplicate nodes and edges
+            const uniqueElements = [];
+            const seenNodes = new Set();
+            const seenEdges = new Set();
+            elements.forEach(el => {
+                if (el.data.source && el.data.target) {
+                    // It's an edge
+                    const edgeId = [el.data.source, el.data.target].sort().join('-');
+                    if (!seenEdges.has(edgeId)) {
+                        seenEdges.add(edgeId);
+                        uniqueElements.push(el);
+                    }
+                } else {
+                    // It's a node
+                    if (!seenNodes.has(el.data.id)) {
+                        seenNodes.add(el.data.id);
+                        uniqueElements.push(el);
+                    }
+                }
+            });
+    
+            // Initialize Cytoscape
+            const cy = cytoscape({
+                container: document.getElementById('cy'),
+                elements: uniqueElements,
+                style: [
+                    {
+                        selector: 'node',
+                        style: {
+                            'background-color': '#007bff',
+                            'label': 'data(id)',
+                            'text-valign': 'center',
+                            'color': '#fff',
+                            'font-size': '12px'
+                        }
+                    },
+                    {
+                        selector: 'edge',
+                        style: {
+                            'width': 2,
+                            'line-color': '#ccc'
+                        }
+                    }
+                ],
+                layout: {
+                    name: 'cose',
+                    animate: false
+                }
+            });
+        }
     </script>
 </body>
 </html>

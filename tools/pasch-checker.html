@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasch Checker | Joshua Ganschow Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">Joshua Ganschow</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../tools.html">Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="container mt-5 pt-5">
+        <h2>Pasch Checker</h2>
+        <p>Determine whether your Steiner Triple System contains any Pasch configurations.</p>
+        
+        <form id="paschCheckForm">
+            <div class="mb-3">
+                <label for="triplesInput" class="form-label">Triples</label>
+                <input type="text" class="form-control" id="triplesInput" placeholder="e.g., 1-2-3,1-4-5,1-6-7" required>
+                <div class="form-text">Enter triples separated by commas. Each triple should have three points separated by hyphens.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Check for Pasch</button>
+            <button type="button" class="btn btn-secondary" id="loadExample">Load Example</button>
+        </form>
+        
+        <hr>
+        
+        <h3>Result:</h3>
+        <pre id="paschResult"></pre>
+    </div>
+    
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Pasch Checker JS -->
+    <script src="../assets/js/pasch-checker.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="../assets/js/script.js"></script>
+    
+    <!-- Tool-Specific JS -->
+    <script>
+        /**
+         * Handler function for Pasch Checker form submission and Load Example button
+         */
+        function handlePaschCheck(triplesString) {
+            const paschResult = document.getElementById('paschResult');
+            // Parse triples
+            const triples = triplesString.split(',').map(tripleStr => {
+                return tripleStr.split('-').map(t => parseInt(t.trim())).filter(t => !isNaN(t));
+            }).filter(triple => triple.length === 3);
+            
+            // Validate input
+            if (triples.length === 0) {
+                paschResult.textContent = 'Please enter at least one valid triple.';
+                return;
+            }
+            
+            // Check for duplicates
+            const uniqueTriples = new Set(triples.map(triple => JSON.stringify([...triple].sort((a, b) => a - b))));
+            if (uniqueTriples.size !== triples.length) {
+                paschResult.textContent = 'Warning: Duplicate triples detected.';
+                // Proceeding, but duplicates might affect the validity
+            }
+            
+            try {
+                const isAntiPasch = isAntiPasch(triples);
+                if (isAntiPasch) {
+                    paschResult.textContent = '✅ The provided Steiner Triple System is anti-Pasch (contains no Pasch configurations).';
+                } else {
+                    paschResult.textContent = '❌ The provided Steiner Triple System contains Pasch configurations.';
+                }
+            } catch (error) {
+                paschResult.textContent = `Error: ${error.message}`;
+            }
+        }
+
+        // Attach submit event listener to the form
+        document.getElementById('paschCheckForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+            const triplesInput = document.getElementById('triplesInput').value.trim();
+            handlePaschCheck(triplesInput);
+        });
+
+        // Attach click event listener to the Load Example button
+        document.getElementById('loadExample').addEventListener('click', function() {
+            // Example that contains a Pasch configuration
+            const exampleTriplesWithPasch = '1-2-3,1-4-5,1-6-7,2-4-6,2-5-7,3-4-7,3-5-6';
+            // Example that is anti-Pasch
+            const exampleTriplesAntiPasch = '1-2-4,1-3-5,1-6-7,2-3-6,2-5-7,3-4-7,4-5-6';
+            // Choose which example to load
+            const loadWithPasch = confirm("Load example that **contains** a Pasch configuration? Click 'Cancel' to load an anti-Pasch example.");
+            if (loadWithPasch) {
+                document.getElementById('triplesInput').value = exampleTriplesWithPasch;
+                handlePaschCheck(exampleTriplesWithPasch);
+            } else {
+                document.getElementById('triplesInput').value = exampleTriplesAntiPasch;
+                handlePaschCheck(exampleTriplesAntiPasch);
+            }
+        });
+    </script>
+</body>
+</html>

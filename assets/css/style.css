@@ -128,6 +128,15 @@ body.dark-mode .btn-secondary:hover {
   color: #ffffff; /* Ensure button text remains white on hover */
 }
 
+body.dark-mode .form-text {
+  color: #e0e0e0; /* Light text color for form text */
+}
+
+body.dark-mode .form-text:hover,
+body.dark-mode .form-text:focus {
+  color: #ffffff; /* White text color on hover/focus */
+}
+
 /* Additional Styles for Forms, Tables, etc. */
 .form-label {
   color: inherit;

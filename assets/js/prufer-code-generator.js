@@ -153,7 +153,7 @@ function handleFormSubmission() {
             // Additional connectivity checks can be implemented if necessary
 
             const pruferCode = tree.generatePrufer();
-            pruferResult.textContent = `✅ Prufer Code: ${pruferCode.join(', ')}`;
+            pruferResult.textContent = `✅ Prufer Code: (${pruferCode.join(', ')})`;
         } catch (error) {
             pruferResult.textContent = `❌ Error: ${error.message}`;
         }

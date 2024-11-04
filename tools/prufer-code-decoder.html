@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prufer Code Decoder | Joshua Ganschow Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Cytoscape.js for Graph Visualization -->
+    <script src="https://unpkg.com/cytoscape@3.21.1/dist/cytoscape.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <style>
+        /* Additional styling for the graph container */
+        #cy {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body class="light-mode"> <!-- Change to 'dark-mode' if you prefer dark mode by default -->
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">Joshua Ganschow</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../tools.html">Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about.html">About</a>
+                    </li>
+                    <!-- Dark Mode Toggle Switch -->
+                    <li class="nav-item">
+                        <div class="form-check form-switch ms-3">
+                            <input class="form-check-input" type="checkbox" id="darkModeToggle" aria-label="Toggle Dark Mode">
+                            <label class="form-check-label" for="darkModeToggle">Dark Mode</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="container mt-5 pt-5">
+        <h2>Prufer Code Decoder</h2>
+        <p>Generate a tree from a given Prufer code and visualize the graph.</p>
+        
+        <!-- Form for Prufer Code Input -->
+        <form id="pruferDecoderForm">
+            <!-- Prufer Code Input -->
+            <div class="mb-3">
+                <label for="pruferCodeInput" class="form-label">Prufer Code</label>
+                <input type="text" class="form-control" id="pruferCodeInput" placeholder="e.g., 4,4,4,5" required>
+                <div class="form-text">Enter the Prufer code as a comma-separated list (e.g., 4,4,4,5).</div>
+            </div>
+            
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Generate Tree</button>
+        </form>
+        
+        <hr>
+        
+        <!-- Result Display -->
+        <h3>Result:</h3>
+        <p id="decoderResult"></p>
+        
+        <!-- Graph Visualization Container -->
+        <div id="cy"></div>
+    </div>
+    
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="../assets/js/script.js" type="module"></script>
+    
+    <!-- Tool-Specific JS -->
+    <script src="../assets/js/prufer-code-decoder.js" type="module"></script>
+</body>
+</html>

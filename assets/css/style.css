@@ -129,7 +129,7 @@ body.dark-mode .btn-secondary:hover {
 }
 
 body.dark-mode .form-text {
-  color: #e0e0e0; /* Light text color for form text */
+  color: #8a8585; /* Light text color for form text */
 }
 
 body.dark-mode .form-text:hover,

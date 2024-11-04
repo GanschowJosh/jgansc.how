@@ -1,3 +1,4 @@
+// pasch checker IIFE to check if a given STS is Anti-Pasch
 (function() {
     /**
      * Determines the order (number of points) of an STS by finding the maximum point number.

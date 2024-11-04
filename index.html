@@ -1,141 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joshua Ganschow Portfolio</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pov2t9HeBtR3ZgDFDHt4KSe0fzlSJV9xyjk/8R7o40ZPBBYdfuuvPoFg+4HWWZImnLLaGJvKmwDheXYc71v0Ng==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <!-- AOS CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Joshua Ganschow Portfolio</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="light-mode">
-    
-    <!-- Navbar with Dark Mode Toggle -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Joshua Ganschow</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link" href="projects.html">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="tools.html">Tools</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <!-- Dark Mode Toggle Switch -->
-                    <li class="nav-item">
-                        <div class="form-check form-switch ms-3">
-                            <input class="form-check-input" type="checkbox" id="darkModeToggle" aria-label="Toggle Dark Mode">
-                            <label class="form-check-label" for="darkModeToggle">Dark Mode</label>
-                        </div>
-                    </li>
-                </ul>
+  
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Joshua Ganschow</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="projects.html">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tools.html">Tools</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <!-- Dark Mode Toggle Switch -->
+          <li class="nav-item">
+            <div class="form-check form-switch ms-3">
+              <input class="form-check-input" type="checkbox" id="darkModeToggle">
+              <label class="form-check-label" for="darkModeToggle">Dark Mode</label>
             </div>
-        </div>
-    </nav>
-    
-    <!-- Hero Section -->
-    <div class="hero-section text-center d-flex align-items-center justify-content-center" data-aos="fade-in">
-        <div class="overlay"></div>
-        <div class="content">
-            <h1 class="display-4" data-aos="fade-down">Welcome to My Portfolio</h1>
-            <p class="lead" data-aos="fade-up">I'm Joshua Ganschow, a mathematician and developer. Explore my projects and tools below.</p>
-            <a class="btn btn-primary btn-lg me-2" href="projects.html" role="button" data-aos="zoom-in">View Projects</a>
-            <a class="btn btn-secondary btn-lg" href="tools.html" role="button" data-aos="zoom-in" data-aos-delay="200">Mathematical Tools</a>
-        </div>
+          </li>
+        </ul>
+      </div>
     </div>
-    
-    <!-- Featured Projects Section -->
-    <div class="container my-5" id="projectsSection">
-        <h2 class="mb-4 text-center" data-aos="fade-up">Featured Projects</h2>
-        <div class="row">
-            <!-- Example Project Card -->
-            <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in">
-                <div class="card h-100">
-                    <img src="assets/images/project1.jpg" class="card-img-top" alt="Project 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Project One</h5>
-                        <p class="card-text">A brief description of Project One.</p>
-                    </div>
-                    <div class="card-footer text-center">
-                        <a href="project1.html" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Repeat similar cards for other projects -->
-        </div>
+  </nav>
+  
+  <!-- Main Content -->
+  <div class="container mt-5 pt-5">
+    <div class="jumbotron text-center">
+      <h1 class="display-4">Welcome to My Portfolio</h1>
+      <p class="lead">I'm Joshua Ganschow, a mathematician and developer. Explore my projects and tools below.</p>
+      <hr class="my-4">
+      <a class="btn btn-primary btn-lg me-2" href="projects.html" role="button">View Projects</a>
+      <a class="btn btn-secondary btn-lg" href="tools.html" role="button">Mathematical Tools</a>
     </div>
-    
-    <!-- Footer with Social Icons -->
-    <footer class="bg-light text-center text-lg-start">
-        <div class="container p-4">
-            <div class="row">
-                <!-- About Me -->
-                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">About Me</h5>
-                    <p>
-                        I'm Joshua Ganschow, a passionate mathematician and developer dedicated to creating impactful projects and tools.
-                    </p>
-                </div>
-                
-                <!-- Connect with Me -->
-                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Connect with Me</h5>
-                    <a href="https://github.com/GanschowJosh" class="me-4 text-reset" target="_blank">
-                        <i class="fab fa-github fa-2x"></i>
-                    </a>
-                    <a href="https://linkedin.com/in/joshua-ganschow" class="me-4 text-reset" target="_blank">
-                        <i class="fab fa-linkedin fa-2x"></i>
-                    </a>
-                    <a href="mailto:ganschowjosh@gmail.com" class="me-4 text-reset" target="_blank">
-                        <i class="fas fa-envelope fa-2x"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2024 Joshua Ganschow
-        </div>
-    </footer>
-    
-    <!-- Back-to-Top Button -->
-    <button type="button" class="btn btn-primary btn-floating btn-lg" id="btn-back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    
-    <!-- AOS JS -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Font Awesome JS (Optional for better icon control) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-pQhku4P0MV7rPR7s4J5k8kyQvGLK2FXFd+LgxC6ISx7BhkN4v9FgAD0q1m4rZQIlGfC1USGKZ+EAV05sAq1Ciw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
-    <!-- Pasch Checker JS (Ensure it's loaded if needed) -->
-    <script src="assets/js/pasch-checker.js"></script>
-    
-    <!-- Custom JS -->
-    <script src="assets/js/script.js" type="module"></script>
-    
+  </div>
+  
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Pasch Checker JS (Ensure it's loaded if needed) -->
+  <script src="assets/js/pasch-checker.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="assets/js/script.js"></script>
+  
+  
 </body>
 </html>

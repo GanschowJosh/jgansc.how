@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Visual Inductive Proof | Joshua Ganschow Portfolio</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="light-mode">
+  
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html">Joshua Ganschow</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="../projects.html">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../tools.html">Tools</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../about.html">About</a>
+          </li>
+          <!-- Dark Mode Toggle Switch -->
+          <li class="nav-item">
+            <div class="form-check form-switch ms-3">
+              <input class="form-check-input" type="checkbox" id="darkModeToggle" aria-label="Toggle Dark Mode">
+              <label class="form-check-label" for="darkModeToggle">Dark Mode</label>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Main Content -->
+  <div class="container mt-5 pt-5">
+    <div class="row">
+      
+      <!-- Project Title and Image -->
+      <div class="col-12 text-center mb-4">
+        <h1>Prime Grid Labeling</h1>
+      </div>
+      
+      <!-- Overview Section -->
+      <div class="col-12 mb-4">
+        <h2>Overview</h2>
+        <p>Generation of an n by m matrix numbered 1 to n*m where each item in the matrix is neighbored only by numbers coprime to the item (a prime grid labeling). This can be easily mapped to find the prime labeling of a graph. </p>
+        <p>This project is a collaborative effort by 6 undergraduate DSU students.</p>
+      </div>
+      
+      <!-- Impetus Section -->
+      <div class="col-12 mb-4">
+        <h2>Impetus</h2>
+        <p>After an research presentation, a professor mentioned the idea of graph labeling in the context of a matrix and we thought it would be an interesting project to work on together.</p>
+        <ul>
+          <li>Interest in graph theory and algorithms associated with graph theory.</li>
+          <li>Desire to work collaboratively with other passionated students.</li>
+          <li>Challenge of furthering the field of graph prime labeling.</li>
+        </ul>
+      </div>
+      
+      <!-- Usage/Output Section -->
+      <div class="col-12 mb-4">
+        <h2>Usage &amp; Output</h2>
+        <p>Detailed more specifically in the README of the repo.</p>
+        <ul>
+          <li>Usage: Adjust <code>START_N</code> and <code>END_N</code> for lower bound and upper bound of grids to generate and run <code>runner.py</code></li>
+          <li>Output: All matrices are output into <code>grids</code> directory</li>
+        </ul>
+        <img src="../assets/images/prime-labeling.png" class="img-fluid mt-3" alt="Example Output">
+      </div>
+      
+      <!-- Skills Developed/Applied Section -->
+      <div class="col-12 mb-4">
+        <h2>Skills Developed &amp; Applied</h2>
+        <ul>
+          <li>Python Programming: Enhanced proficiency in Python, particularly with self-created modules and object-oriented principles</li>
+          <li>Mathematical Reasoning: Deepened understanding of structure of graphs and graph algorithms, along with furthering the field of graph theory.</li>
+          <li>Collaboration and Version Control: Worked closely with 5 other students on multiple versions of the software at the same time, utilizing Git for version control. Communicated regularly about project requirements and ideas with other members.</li>
+          <li>Problem-Solving: Applied logical reasoning to translate mathematical theory into executable code.</li>
+        </ul>
+      </div>
+      
+      <!-- GitHub Link -->
+      <div class="col-12 text-center mb-4">
+        <a href="https://github.com/GanschowJosh/PrimeGridLabeling/" class="btn btn-primary" target="_blank">View on GitHub</a>
+      
+      <!-- Back to Projects Button -->
+        <a href="../projects.html" class="btn btn-secondary">Back to Projects</a>
+      </div>
+      
+    </div>
+  </div>
+  
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="../assets/js/script.js"></script>
+  
+</body>
+</html>

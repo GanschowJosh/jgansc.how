@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Visual Inductive Proof | Joshua Ganschow Portfolio</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="light-mode">
+  
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html">Joshua Ganschow</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="../projects.html">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../tools.html">Tools</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../about.html">About</a>
+          </li>
+          <!-- Dark Mode Toggle Switch -->
+          <li class="nav-item">
+            <div class="form-check form-switch ms-3">
+              <input class="form-check-input" type="checkbox" id="darkModeToggle" aria-label="Toggle Dark Mode">
+              <label class="form-check-label" for="darkModeToggle">Dark Mode</label>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Main Content -->
+  <div class="container mt-5 pt-5">
+    <div class="row">
+      
+      <!-- Project Title and Image -->
+      <div class="col-12 text-center mb-4">
+        <h1>Visual Inductive Proof</h1>
+      </div>
+      
+      <!-- Overview Section -->
+      <div class="col-12 mb-4">
+        <h2>Overview</h2>
+        <p>A visual representation using Matplotlib to illustrate a proof by induction for the statement: "Prove that for any 2^n by 2^n grid with any one square removed, a number of L-shaped triominoes can be made to cover the entire board."</p>
+      </div>
+      
+      <!-- Impetus Section -->
+      <div class="col-12 mb-4">
+        <h2>Impetus</h2>
+        <p>For an assignment for my discrete math class, I was asked to prove the aforementioned statement. After crafting the inductive proof, I realized that it would be fun to write a visualization for it in Python. After writing the script and showing my professor, he asked me to join his research project on Steiner Triple Systems. This introduced me to a field of mathematics with which I had little experience at the time, but I have grown to love.</p>
+        <ul>
+          <li>Interest in combinatorial mathematics and visual proofs.</li>
+          <li>Desire to create an visualization tool for understanding my inductive proof.</li>
+          <li>Challenge of translating abstract mathematical concepts into visual representations.</li>
+        </ul>
+      </div>
+      
+      <!-- Usage/Output Section -->
+      <div class="col-12 mb-4">
+        <h2>Usage &amp; Output</h2>
+        <p>Running the Python script, the user will be prompted to enter a number for the size of the grid. Then, the user will be prompted to enter the row and column number for the empty block.</p>
+        <ul>
+          <li>**Usage**: Run the Python script to generate visual proofs for different values of n, row and column.</li>
+          <li>**Output**: Matplotlib visualization showing the grid generated using my inductive proof, labeled to indicated the order in which the triominoes were placed into the grid.</li>
+        </ul>
+        <img src="../assets/images/triominoes.png" class="img-fluid mt-3" alt="Example Output">
+      </div>
+      
+      <!-- Skills Developed/Applied Section -->
+      <div class="col-12 mb-4">
+        <h2>Skills Developed &amp; Applied</h2>
+        <ul>
+          <li>**Python Programming**: Enhanced proficiency in Python, particularly with libraries like Matplotlib.</li>
+          <li>**Mathematical Reasoning**: Deepened understanding of inductive proofs and combinatorial mathematics.</li>
+          <li>**Data Visualization**: Improved skills in creating clear and informative visual representations of complex concepts.</li>
+          <li>**Problem-Solving**: Applied logical reasoning to translate mathematical theory into executable code.</li>
+        </ul>
+      </div>
+      
+      <!-- GitHub Link -->
+      <div class="col-12 text-center mb-4">
+        <a href="https://github.com/GanschowJosh/DiscreteMath/blob/main/triominoes.py" class="btn btn-primary" target="_blank">View on GitHub</a>
+      </div>
+      
+      <!-- Back to Projects -->
+      <div class="col-12 text-center">
+        <a href="../projects.html" class="btn btn-secondary">Back to Projects</a>
+      </div>
+      
+    </div>
+  </div>
+  
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="../assets/js/script.js"></script>
+  
+</body>
+</html>

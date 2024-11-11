@@ -24,7 +24,7 @@
 
 /* General Styling */
 body, h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif; /* Custom font */
+  font-family: math;
   line-height: 1.6;
   letter-spacing: 0.5px;
   color: #e0e0e0;
@@ -47,6 +47,7 @@ body.light-mode a:hover {
 body.light-mode .navbar {
   background-color: var(--navbar-bg);
   color: var(--navbar-text);
+  padding: 15px 30px;
 }
 
 body.light-mode .card {
@@ -117,8 +118,16 @@ body.dark-mode .navbar {
   transition: color 0.3s;
 }
 
-.nav-link:hover {
-  color: #3700b3;
+body.light-mode .nav-link:hover {
+  color: #000000;
+}
+
+body.dark-mode .nav-link.active {
+  color: #ffffff;
+}
+
+body.dark-mode .nav-link:hover {
+  color: #ffffff;
 }
 
 body.dark-mode .card {

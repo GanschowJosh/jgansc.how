@@ -298,6 +298,11 @@ body.dark-mode .list-group-item {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
+body.dark-mode .list-group-item:hover {
+  background-color: #333333;
+  color: #c61aff;
+}
+
 /* Dark Mode for Accordion */
 body.dark-mode .accordion-item {
   background-color: #1e1e1e;

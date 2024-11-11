@@ -48,14 +48,9 @@
     <!-- Main Content -->
     <div class="container mt-5 pt-5">
         <h2>Is Steiner Triple System?</h2>
-        <p>Check if your set of points and triples forms a valid Steiner Triple System.</p>
+        <p>Check if your set of triples forms a valid Steiner Triple System.</p>
         
         <form id="stsCheckForm">
-            <div class="mb-3">
-                <label for="pointsInput" class="form-label">Points</label>
-                <input type="text" class="form-control" id="pointsInput" placeholder="e.g., 1,2,3,4,5,6,7" required>
-                <div class="form-text">Enter points separated by commas.</div>
-            </div>
             <div class="mb-3">
                 <label for="triplesInput" class="form-label">Triples</label>
                 <input type="text" class="form-control" id="triplesInput" placeholder="e.g., 1-2-3,1-4-5,1-6-7" required>
@@ -83,39 +78,37 @@
     <script>
         document.getElementById('stsCheckForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const pointsInput = document.getElementById('pointsInput').value.trim();
             const triplesInput = document.getElementById('triplesInput').value.trim();
             const resultOutput = document.getElementById('stsResult');
             
-            // Parse points
-            const points = pointsInput.split(',').map(p => parseInt(p.trim())).filter(p => !isNaN(p));
-            
-            // Parse triples
+            // Parse triples and extract points
             const triples = triplesInput.split(',').map(tripleStr => {
                 return tripleStr.split('-').map(t => parseInt(t.trim())).filter(t => !isNaN(t));
             }).filter(triple => triple.length === 3);
-            
+    
+            // Extract unique points from triples
+            const pointsSet = new Set();
+            triples.forEach(triple => triple.forEach(point => pointsSet.add(point)));
+            const points = Array.from(pointsSet);
+    
             // Validate input
             if (points.length === 0) {
-                resultOutput.textContent = 'Please enter at least one point.';
+                resultOutput.textContent = 'Please provide at least one valid triple.';
                 return;
             }
-            if (triples.length === 0) {
-                resultOutput.textContent = 'Please enter at least one valid triple.';
-                return;
-            }
-            
+    
             try {
                 const isValid = isSteinerTripleSystem(points, triples);
                 if (isValid) {
-                    resultOutput.textContent = '✅ The provided points and triples form a valid Steiner Triple System.';
+                    resultOutput.textContent = '✅ The provided triples form a valid Steiner Triple System.';
                 } else {
-                    resultOutput.textContent = '❌ The provided points and triples do NOT form a valid Steiner Triple System.';
+                    resultOutput.textContent = '❌ The provided triples do NOT form a valid Steiner Triple System.';
                 }
             } catch (error) {
                 resultOutput.textContent = `Error: ${error.message}`;
             }
         });
     </script>
+    
 </body>
 </html>

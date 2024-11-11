@@ -54,7 +54,7 @@
             <div class="mb-3">
                 <label for="orderInput" class="form-label">Order (v)</label>
                 <input type="number" class="form-control" id="orderInput" min="1" required>
-                <div class="form-text">Enter a positive integer where v ≡ 1 or 3 mod 6.</div>
+                <div class="form-text">Enter a positive integer less than 100 where v ≡ 1 or 3 mod 6.</div>
             </div>
             <button type="submit" class="btn btn-primary">Generate</button>
             <button type="button" class="btn btn-secondary" id="loadExample">Load Example</button>
@@ -90,17 +90,14 @@
             const resultOutput = document.getElementById('resultOutput');
             const cyContainer = document.getElementById('cy');
             
-            if (isNaN(v) || v < 1) {
+            if (isNaN(v) || v < 1 || v >= 100 || v % 6 !== 1 && v % 6 !== 3) {
                 resultOutput.textContent = 'Please enter a valid positive integer for the order.';
-                cyContainer.innerHTML = ''; // Clear visualization
                 return;
             }
             try {
                 const triplesString = generateSteinerTripleSystem(v);
                 resultOutput.textContent = `Steiner Triple System of order ${v}:\n${triplesString}`;
                 
-                // Optional: Visualize the Steiner Triple System
-                // visualizeSTS(triplesString);
                 
             } catch (error) {
                 resultOutput.textContent = error.message;

@@ -159,6 +159,19 @@ function visualizeTree(tree) {
 }
 
 /**
+ * Generates a random Prufer code of a specified maximum length.
+ * @param {number} maxLength - The maximum length of the Prufer code.
+ * @returns {string} - A comma-separated Prufer code as a string.
+ */
+function generateRandomPruferCode(maxLength) {
+    const length = Math.floor(Math.random() * maxLength) + 1; //Random length between 1 and maxLength
+    const nodeCount = length + 2;
+    
+    const pruferCode = Array.from({ length: length }, () => Math.floor(Math.random() * nodeCount) + 1);
+
+    return pruferCode.join(',');
+}
+/**
  * Function to handle form submission and Prufer code decoding
  */
 function handleFormSubmission() {
@@ -193,8 +206,9 @@ function handleFormSubmission() {
     });
 
     document.getElementById('generateExample').addEventListener('click', function() {
-        // Set an example Prufer code in the input field
-        document.getElementById('pruferCodeInput').value = '4,4,4,5';
+        // Generate a random Prufer code with a max length of 20
+        const randomPruferCode = generateRandomPruferCode(20);
+        document.getElementById('pruferCodeInput').value = randomPruferCode;
         
         // Trigger the form submission
         document.getElementById('pruferDecoderForm').requestSubmit();

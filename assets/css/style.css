@@ -60,6 +60,75 @@ html {
   background: linear-gradient(135deg, #545b62, #6c757d);
 }
 
+/* Tool Card Styles */
+.tool-card {
+  background-color: var(--card-bg, #fff);
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.tool-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.tool-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.tool-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.tool-description {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* Light Mode */
+body.light-mode .tool-card {
+  --card-bg: #f9f9f9;
+  color: #000000;
+}
+
+body.light-mode .tool-description {
+  color: #000000;
+}
+
+body.light-mode .tool-card a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+body.light-mode .tool-card a:hover {
+  color: #0056b3;
+}
+
+/* Dark Mode */
+body.dark-mode .tool-card {
+  --card-bg: #333;
+  color: #ffffff;
+}
+
+body.dark-mode .tool-description {
+  color: #ffffff;
+}
+
+body.dark-mode .tool-card a {
+  color: #66b2ff;
+  text-decoration: none;
+}
+
+body.dark-mode .tool-card a:hover {
+  color: #99ccff;
+}
+
 
 .card {
   border-radius: 12px;

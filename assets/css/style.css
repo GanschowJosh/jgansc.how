@@ -20,9 +20,17 @@
   --btn-secondary-border: #6c757d;
   --btn-secondary-hover-bg: #5a6268;
   --btn-secondary-hover-border: #545b62;
-  /* Add more variables as needed */
 }
 
+/* General Styling */
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif; /* Custom font */
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  color: #e0e0e0;
+}
+
+/* Light Mode */
 body.light-mode {
   background-color: var(--background-color);
   color: var(--text-color);
@@ -51,6 +59,14 @@ body.light-mode .card {
 body.light-mode .card:hover {
   background-color: var(--card-hover-bg);
   color: var(--card-hover-text);
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary {
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
 }
 
 body.light-mode .btn-primary {
@@ -90,89 +106,139 @@ body.dark-mode a:hover {
 body.dark-mode .navbar {
   background-color: #1f1f1f;
   color: #e0e0e0;
+  padding: 15px 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link {
+  color: #bb86fc;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #3700b3;
 }
 
 body.dark-mode .card {
-  background-color: #1e1e1e; /* Dark background */
-  color: #e0e0e0;            /* Light text */
-  border: 1px solid #3e3e3e; /* Darker border */
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-}
-
-body.dark-mode .card:hover {
-  background-color: #333333; /* Slightly lighter dark background on hover */
-  color: #ffffff;            /* White text on hover */
-}
-
-body.dark-mode .btn-primary {
-  background-color: #bb86fc;
-  border-color: #bb86fc;
-  color: #ffffff; /* Ensure button text is white */
-}
-
-body.dark-mode .btn-primary:hover {
-  background-color: #3700b3;
-  border-color: #3700b3;
-  color: #ffffff; /* Ensure button text remains white on hover */
-}
-
-body.dark-mode .btn-secondary {
-  background-color: #03dac6;
-  border-color: #03dac6;
-  color: #ffffff; /* Ensure button text is white */
-}
-
-body.dark-mode .btn-secondary:hover {
-  background-color: #018786;
-  border-color: #018786;
-  color: #ffffff; /* Ensure button text remains white on hover */
-}
-
-body.dark-mode .form-text {
-  color: #8a8585; /* Light text color for form text */
-}
-
-body.dark-mode .form-text:hover,
-body.dark-mode .form-text:focus {
-  color: #ffffff; /* White text color on hover/focus */
-}
-
-/* Additional Styles for Forms, Tables, etc. */
-.form-label {
-  color: inherit;
-}
-
-.form-control {
   background-color: #1e1e1e;
   color: #e0e0e0;
   border: 1px solid #3e3e3e;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
-body.light-mode .form-control {
-  background-color: #ffffff;
-  color: #121212;
-  border-color: #ced4da;
-}
-
-.form-control:focus {
-  background-color: #2c2c2c;
+body.dark-mode .card:hover {
+  background-color: #333333;
   color: #ffffff;
+}
+
+/* Dark Mode Buttons */
+body.dark-mode .btn-primary {
+  background-color: #bb86fc;
   border-color: #bb86fc;
+  color: #ffffff;
+}
+
+body.dark-mode .btn-primary:hover {
+  background-color: #3700b3;
+  border-color: #3700b3;
+  color: #ffffff;
+}
+
+body.dark-mode .btn-secondary {
+  background-color: #03dac6;
+  border-color: #03dac6;
+  color: #ffffff;
+}
+
+body.dark-mode .btn-secondary:hover {
+  background-color: #018786;
+  border-color: #018786;
+  color: #ffffff;
+}
+
+/* Forms and Inputs */
+.form-control {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border: 1px solid #3e3e3e;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+body.dark-mode .form-control:focus {
+  background-color: #2c2c2c;
+  border-color: #bb86fc;
+  color: #ffffff;
   box-shadow: none;
 }
 
-body.light-mode .form-control:focus {
-  background-color: #ffffff;
-  color: #121212;
-  border-color: #80bdff;
-  box-shadow: none;
+/* Dark Mode Form Text */
+body.dark-mode .form-text {
+  color: #b3b3b3; /* Light gray for better contrast in dark mode */
+}
+
+body.dark-mode .form-text:hover,
+body.dark-mode .form-text:focus {
+  color: #ffffff; /* Brighter color on hover or focus for emphasis */
+}
+
+
+/* Dark Mode for List Group Items */
+body.dark-mode .list-group-item {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border-color: #3e3e3e;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Mode for Accordion */
+body.dark-mode .accordion-item {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border-color: #3e3e3e;
+}
+
+body.dark-mode .accordion-button {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border: none;
+  padding: 12px 16px;
+  font-weight: 500;
+}
+
+body.dark-mode .accordion-button::after {
+  color: #ffffff;
+}
+
+body.dark-mode .accordion-button:not(.collapsed) {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+body.dark-mode .accordion-body {
+  background-color: #2c2c2c;
+  color: #e0e0e0;
+  border-top: 1px solid #3e3e3e;
+  padding: 15px;
+}
+
+/* Footer */
+footer {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+  padding: 20px 0;
+  border-top: 1px solid #3e3e3e;
 }
 
 /* Placeholder Text */
 ::placeholder {
   color: #757575;
-  opacity: 1; /* Firefox */
+  opacity: 1;
 }
 
 body.light-mode ::placeholder {
@@ -190,11 +256,7 @@ body.dark-mode .card-img-top {
   transition: filter 0.3s;
 }
 
-/* Add transition effects */
-body {
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.navbar, .btn-primary, .btn-secondary, .form-control, a {
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+/* General Transition */
+* {
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }

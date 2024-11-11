@@ -22,6 +22,89 @@
   --btn-secondary-hover-border: #545b62;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary {
+  padding: 12px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Primary Button Gradient */
+.btn-primary {
+  background: linear-gradient(135deg, #1a73e8, #1669c1);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #1669c1, #1a73e8);
+}
+
+/* Secondary Button Gradient */
+.btn-secondary {
+  background: linear-gradient(135deg, #6c757d, #545b62);
+  border: none;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #545b62, #6c757d);
+}
+
+
+.card {
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.3s;
+
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Fade-in Effect */
+.container .fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.container .fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--link-hover-color);
+}
+
+
 /* General Styling */
 body, h1, h2, h3, h4, h5, h6 {
   font-family: math;
@@ -62,13 +145,7 @@ body.light-mode .card:hover {
   color: var(--card-hover-text);
 }
 
-/* Buttons */
-.btn-primary, .btn-secondary {
-  padding: 10px 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  font-weight: 600;
-}
+
 
 body.light-mode .btn-primary {
   background-color: var(--btn-primary-bg);
@@ -88,6 +165,12 @@ body.light-mode .btn-secondary {
 body.light-mode .btn-secondary:hover {
   background-color: var(--btn-secondary-hover-bg);
   border-color: var(--btn-secondary-hover-border);
+}
+
+body.light-mode .list-group-item {
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Dark Mode Overrides */

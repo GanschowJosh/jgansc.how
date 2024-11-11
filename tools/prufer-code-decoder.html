@@ -14,7 +14,6 @@
     <!-- Cytoscape.js for Graph Visualization -->
     <script src="https://unpkg.com/cytoscape@3.21.1/dist/cytoscape.min.js"></script>
     
-    
     <style>
         /* Additional styling for the graph container */
         #cy {
@@ -72,8 +71,9 @@
                 <div class="form-text">Enter the Prufer code as a comma-separated list (e.g., 4,4,4,5).</div>
             </div>
             
-            <!-- Submit Button -->
+            <!-- Buttons -->
             <button type="submit" class="btn btn-primary">Generate Tree</button>
+            <button type="button" id="generateExample" class="btn btn-secondary">Generate Example</button>
         </form>
         
         <hr>
@@ -94,5 +94,6 @@
     
     <!-- Tool-Specific JS -->
     <script src="../assets/js/prufer-code-decoder.js" type="module"></script>
+    
 </body>
 </html>

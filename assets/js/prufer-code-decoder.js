@@ -191,6 +191,14 @@ function handleFormSubmission() {
             cyContainer.innerHTML = '';
         }
     });
+
+    document.getElementById('generateExample').addEventListener('click', function() {
+        // Set an example Prufer code in the input field
+        document.getElementById('pruferCodeInput').value = '4,4,4,5';
+        
+        // Trigger the form submission
+        document.getElementById('pruferDecoderForm').requestSubmit();
+    });
 }
 
 /**

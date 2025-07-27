@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <script>
+    //prevent fouc
+    (function () {
+      const savedTheme = localStorage.getItem('theme') || 'light-mode';
+      document.documentElement.classList.add(savedTheme);
+
+      const root = document.documentElement;
+      root.classList.add(savedTheme);
+
+      root.setAttribute('data-bs-theme', savedTheme == 'dark-mode' ? 'dark' : 'light');
+    })();
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Joshua Ganschow | Mathematician & Developer Portfolio</title>
-  
+
+  <!-- Custom JS -->
+  <script src="assets/js/script.js"></script>
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
-  
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
+
   <style>
     /* Custom Styles */
     .hero {
@@ -46,7 +62,8 @@
       background-color: #ffffff;
     }
 
-    .btn-primary, .btn-secondary {
+    .btn-primary,
+    .btn-secondary {
       transition: transform 0.2s ease, background-color 0.2s ease;
     }
 
@@ -77,16 +94,31 @@
       color: #007bff;
     }
   </style>
-  
+
+
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+  </script>
+
 </head>
-<body class="light-mode">
-  
+
+<body>
+
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">Joshua Ganschow</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -111,17 +143,18 @@
       </div>
     </div>
   </nav>
-  
+
   <!-- Hero Section -->
   <div class="hero">
     <div>
       <h1 class="display-4">Welcome to My Portfolio</h1>
-      <p class="lead">I'm Joshua Ganschow, a mathematician, developer, and competitive programmer. Check out my work in combinatorics, custom tools for graph theory and combinatorics research, and algorithmic problem-solving.</p>
+      <p class="lead">I'm Joshua Ganschow, a mathematician, developer, and competitive programmer. Check out my work in
+        combinatorics, custom tools for graph theory and combinatorics research, and algorithmic problem-solving.</p>
       <a class="btn btn-primary btn-lg me-2" href="projects.html" role="button">Explore Projects</a>
       <a class="btn btn-secondary btn-lg" href="tools.html" role="button">Mathematical Tools</a>
     </div>
   </div>
-  
+
   <!-- Main Content -->
   <div class="container mt-5 pt-5">
     <div class="text-center mb-5">
@@ -129,69 +162,59 @@
       <p>Check out some of the recent projects I've worked on, from combinatorial tools to web-based applications.</p>
     </div>
     <section id="projects" class="mb-5">
-      <div class="row" >
-          <!-- Project Card 1 -->
-          <div class="col-md-4 mb-4">
-              <div class="card h-100">
-                  <div class="card-body">
-                      <h5 class="card-title">Undergraduate Research - Steiner Triple Systems</h5>
-                      <p class="card-text">Research into the combinatorics/graph theory structure of Steiner Triple Systems</p>
-                      <a href="projects/steiner-triple-systems-project.html" class="btn btn-primary">Learn More</a>
-                  </div>
-              </div>
-          </div>
-          
-          <!-- Project Card 2 -->
-          <div class="col-md-4 mb-4">
-              <div class="card h-100">
-                  <div class="card-body">
-                      <h5 class="card-title">Undergraduate Research - Prime Labeling</h5>
-                      <p class="card-text">Collaboration with other undergraduate students in the study of prime labeling of matrices.</p>
-                      <a href="projects/prime-labeling-project.html" class="btn btn-primary">Learn More</a>
-                  </div>
-              </div>
-          </div>
+      <div class="row">
+        <script>
+          //prevent fouc
+          (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light-mode';
+            document.documentElement.classList.add(savedTheme);
 
-          <!-- Project Card 3 -->
-          <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">Steiner Triple Systems Generator</h5>
-                    <p class="card-text">JavaScript tool to generate a Steiner Triple System of a given order.</p>
-                    <a href="tools/steiner-triple-generator.html" class="btn btn-primary">View Tool</a>
-                </div>
-            </div>
-          </div>
+            const root = document.documentElement;
+            root.classList.add(savedTheme);
+
+            root.setAttribute('data-bs-theme', savedTheme == 'dark-mode' ? 'dark' : 'light');
+          })();
+        </script>
+        <div class="card-body">
+          <h5 class="card-title">Undergraduate Research - Steiner Triple Systems</h5>
+          <p class="card-text">Research into the combinatorics/graph theory structure of Steiner Triple Systems</p>
+          <a href="projects/steiner-triple-systems-project.html" class="btn btn-primary">Learn More</a>
+        </div>
       </div>
-    </section>
-</div>
-  
+  </div>
+
+  <!-- Project Card 2 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">Undergraduate Research - Prime Labeling</h5>
+        <p class="card-text">Collaboration with other undergraduate students in the study of prime labeling of matrices.
+        </p>
+        <a href="projects/prime-labeling-project.html" class="btn btn-primary">Learn More</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Card 3 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">Steiner Triple Systems Generator</h5>
+        <p class="card-text">JavaScript tool to generate a Steiner Triple System of a given order.</p>
+        <a href="tools/steiner-triple-generator.html" class="btn btn-primary">View Tool</a>
+      </div>
+    </div>
+  </div>
+  </div>
+  </section>
+  </div>
+
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
+
   <!-- Pasch Checker JS (Ensure it's loaded if needed) -->
   <script src="assets/js/pasch-checker.js"></script>
-  
-  <!-- Custom JS -->
-  <script src="assets/js/script.js"></script>
-  
-  <script>
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
 
-    // Dark Mode Toggle
-    const toggle = document.getElementById('darkModeToggle');
-    toggle.addEventListener('change', () => {
-      document.body.classList.toggle('dark-mode');
-    });
-  </script>
-  
 </body>
+
 </html>

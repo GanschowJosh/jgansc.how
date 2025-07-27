@@ -1,25 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <script>
+        //prevent fouc
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light-mode';
+            document.documentElement.classList.add(savedTheme);
+
+            const root = document.documentElement;
+            root.classList.add(savedTheme);
+
+            root.setAttribute('data-bs-theme', savedTheme == 'dark-mode' ? 'dark' : 'light');
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Joshua Ganschow Portfolio</title>
-    
+
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
 </head>
-<body class="light-mode">
-    
+
+<body>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">Joshua Ganschow</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -36,7 +53,8 @@
                     <!-- Dark Mode Toggle Switch -->
                     <li class="nav-item">
                         <div class="form-check form-switch ms-3">
-                            <input class="form-check-input" type="checkbox" id="darkModeToggle" aria-label="Toggle Dark Mode">
+                            <input class="form-check-input" type="checkbox" id="darkModeToggle"
+                                aria-label="Toggle Dark Mode">
                             <label class="form-check-label" for="darkModeToggle">Dark Mode</label>
                         </div>
                     </li>
@@ -44,17 +62,20 @@
             </div>
         </div>
     </nav>
-    
+
     <!-- Main Content -->
     <div class="container mt-5 pt-5">
         <!-- Introduction Section -->
         <section id="introduction" class="mb-5">
             <h2>About Me</h2>
             <p>
-                Hello! I'm Joshua Ganschow, a Computer Science and Mathematics student at Dakota State University with a strong background in competitive programming and algorithm design for combinatorics and graph theory. I enjoy creating impactful projects and continuously expanding my knowledge in the fields of graph theory, combinatorics, and all things computer science.
+                Hello! I'm Joshua Ganschow, a Computer Science and Mathematics student at Dakota State University with a
+                strong background in competitive programming and algorithm design for combinatorics and graph theory. I
+                enjoy creating impactful projects and continuously expanding my knowledge in the fields of graph theory,
+                combinatorics, and all things computer science.
             </p>
         </section>
-        
+
         <!-- Skills Section -->
         <section id="skills" class="mb-5">
             <h3>Skills</h3>
@@ -65,7 +86,7 @@
                 <li class="list-group-item">Tools & Platforms: Git, GitHub, Visual Studio</li>
             </ul>
         </section>
-        
+
         <!-- Experience Section -->
         <section id="experience" class="mb-5">
             <h3>Experience</h3>
@@ -73,36 +94,41 @@
                 <!-- Experience Item 1 -->
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" 
-                                aria-expanded="true" aria-controls="collapseOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             Undergraduate Researcher at Dakota State University
                         </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" 
-                         data-bs-parent="#experienceAccordion">
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#experienceAccordion">
                         <div class="accordion-body">
                             <strong>Nov. 2023 - Present</strong>
                             <ul>
-                                <li>Analyzed and developed algorithms for the generation and analysis of Steiner Triple Systems</li>
-                                <li>Extensively researched current methodologies for research in the field of combinatorics</li>
-                                <li>Implemented various methods for furthering our understanding of these structures</li>
-                                <li>Compiled and presented my research to a group of students and professors as the inaugural presenter for the Dakota State University Undergraduate Research Seminar Series</li>
+                                <li>Analyzed and developed algorithms for the generation and analysis of Steiner Triple
+                                    Systems</li>
+                                <li>Extensively researched current methodologies for research in the field of
+                                    combinatorics</li>
+                                <li>Implemented various methods for furthering our understanding of these structures
+                                </li>
+                                <li>Compiled and presented my research to a group of students and professors as the
+                                    inaugural presenter for the Dakota State University Undergraduate Research Seminar
+                                    Series</li>
                                 <li>Worked closely in collaboration with Dr. Justin Schroeder</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Experience Item 2 -->
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             GROWSTEM Student Mentor at Dakota State University
                         </button>
                     </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" 
-                         data-bs-parent="#experienceAccordion">
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#experienceAccordion">
                         <div class="accordion-body">
                             <strong>Aug. 2024 - Present</strong>
                             <ul>
@@ -117,64 +143,65 @@
                 <!-- Experience Item 3 -->
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             Competitive Programming Leader for DSU Programming Club
                         </button>
                     </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" 
-                         data-bs-parent="#experienceAccordion">
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#experienceAccordion">
                         <div class="accordion-body">
                             <strong>May 2024 - Present</strong>
                             <ul>
-                                <li>Create and present content weekly for the Competitive Programming Club at Dakota State University</li>
-                                <li>Led team to national-level competition for the International Collegiate Programming Contest (NAPC of ICPC)</li>
-                                <li>Host weekly practice sessions for students interested in competitive programming, filling a niche left unfulfilled by our curriculum</li>
+                                <li>Create and present content weekly for the Competitive Programming Club at Dakota
+                                    State University</li>
+                                <li>Led team to national-level competition for the International Collegiate Programming
+                                    Contest (NAPC of ICPC)</li>
+                                <li>Host weekly practice sessions for students interested in competitive programming,
+                                    filling a niche left unfulfilled by our curriculum</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
-        </section>
-        
-        <!-- Education Section -->
-        <section id="education" class="mb-5">
-            <h3>Education</h3>
-            <div class="accordion" id="educationAccordion">
-                <!-- Education Item 1 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="eduHeadingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#eduCollapseOne" 
-                                aria-expanded="true" aria-controls="eduCollapseOne">
-                            Bachelors of Science in Computer Science and Mathematics
-                        </button>
-                    </h2>
-                    <div id="eduCollapseOne" class="accordion-collapse collapse show" aria-labelledby="eduHeadingOne" 
-                         data-bs-parent="#educationAccordion">
-                        <div class="accordion-body">
-                            <strong>Dakota State University, Madison, South Dakota</strong>
-                            <p>2023 - 2026 (anticipated)</p>
-                            <p>GPA: 3.95</p>
+        </section><!-- Custom JS -->
+        <script src="assets/js/script.js"></script>
+        <h3>Education</h3>
+        <div class="accordion" id="educationAccordion">
+            <!-- Education Item 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="eduHeadingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#eduCollapseOne" aria-expanded="true" aria-controls="eduCollapseOne">
+                        Bachelors of Science in Computer Science and Mathematics
+                    </button>
+                </h2>
+                <div id="eduCollapseOne" class="accordion-collapse collapse show" aria-labelledby="eduHeadingOne"
+                    data-bs-parent="#educationAccordion">
+                    <div class="accordion-body">
+                        <strong>Dakota State University, Madison, South Dakota</strong>
+                        <p>2023 - 2026 (anticipated)</p>
+                        <p>GPA: 3.95</p>
+                        <ul>
+                            <li>Relevant coursework</li>
                             <ul>
-                                <li>Relevant coursework</li>
-                                    <ul>
-                                        <li>Computer Science I and II</li>
-                                        <li>Data Structures</li>
-                                        <li>Object-Oriented Design</li>
-                                        <li>Structured Systems Analysis</li>
-                                        <li>Discrete Mathematics</li>
-                                        <li>Statistics</li>
-                                        <li>Calculus I</li>
-                                        <li>Assembly Language</li>   
-                                    </ul>
+                                <li>Computer Science I and II</li>
+                                <li>Data Structures</li>
+                                <li>Object-Oriented Design</li>
+                                <li>Structured Systems Analysis</li>
+                                <li>Discrete Mathematics</li>
+                                <li>Statistics</li>
+                                <li>Calculus I</li>
+                                <li>Assembly Language</li>
                             </ul>
-                        </div>
+                        </ul>
                     </div>
                 </div>
             </div>
+        </div>
         </section>
-        
+
         <!-- Projects Section -->
         <section id="projects" class="mb-5">
             <h3>Highlighted Projects</h3>
@@ -184,41 +211,47 @@
                     <div class="card h-100">
                         <div class="card-body">
                             <h5 class="card-title">Undergraduate Research - Steiner Triple Systems</h5>
-                            <p class="card-text">Research into the combinatorics/graph theory structure of Steiner Triple Systems</p>
-                            <a href="projects/steiner-triple-systems-project.html" class="btn btn-primary" target="_blank">Learn More</a>
+                            <p class="card-text">Research into the combinatorics/graph theory structure of Steiner
+                                Triple Systems</p>
+                            <a href="projects/steiner-triple-systems-project.html" class="btn btn-primary"
+                                target="_blank">Learn More</a>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Project Card 2 -->
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
                         <div class="card-body">
                             <h5 class="card-title">Undergraduate Research - Prime Labeling</h5>
-                            <p class="card-text">Collaboration with other undergraduate students in the study of prime labeling of matrices.</p>
-                            <a href="projects/prime-labeling-project.html" class="btn btn-primary" target="_blank">Learn More</a>
+                            <p class="card-text">Collaboration with other undergraduate students in the study of prime
+                                labeling of matrices.</p>
+                            <a href="projects/prime-labeling-project.html" class="btn btn-primary" target="_blank">Learn
+                                More</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Contact Section -->
         <section id="contact" class="mb-5">
             <h3>Contact Me</h3>
             <p>If you'd like to get in touch, feel free to reach out through any of the platforms below:</p>
             <ul class="list-group">
-                <li class="list-group-item">📧 Personal Email: <a href="mailto:ganschowjosh@gmail.com">ganschowjosh@gmail.com</a></li>
-                <li class="list-group-item">📧 School Email: <a href="mailto:Joshua.Ganschow@trojans.dsu.edu">Joshua.Ganschow@trojans.dsu.edu</a></li>
-                <li class="list-group-item">🔗 LinkedIn: <a href="https://www.linkedin.com/in/joshua-ganschow/" target="_blank">https://www.linkedin.com/in/joshua-ganschow/</a></li>
+                <li class="list-group-item">📧 Personal Email: <a
+                        href="mailto:ganschowjosh@gmail.com">ganschowjosh@gmail.com</a></li>
+                <li class="list-group-item">📧 School Email: <a
+                        href="mailto:Joshua.Ganschow@trojans.dsu.edu">Joshua.Ganschow@trojans.dsu.edu</a></li>
+                <li class="list-group-item">🔗 LinkedIn: <a href="https://www.linkedin.com/in/joshua-ganschow/"
+                        target="_blank">https://www.linkedin.com/in/joshua-ganschow/</a></li>
             </ul>
         </section>
     </div>
-    
+
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom JS -->
-    <script src="assets/js/script.js"></script>
+
 </body>
+
 </html>

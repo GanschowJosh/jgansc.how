@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        //prevent fouc
+        (function () {
+          const savedTheme = localStorage.getItem('theme') || 'light-mode';
+          document.documentElement.classList.add(savedTheme);
+    
+          const root = document.documentElement;
+          root.classList.add(savedTheme);
+    
+          root.setAttribute('data-bs-theme', savedTheme == 'dark-mode' ? 'dark' : 'light');
+        })();
+      </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steiner Triple Systems Generator | Joshua Ganschow Portfolio</title>

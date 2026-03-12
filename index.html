@@ -58,8 +58,10 @@
       padding: 0.5rem 10rem;
     }
 
-    hero-text {
-      background-color: #ffffff;
+    .hero-text {
+      background-color: rgba(0, 0, 0, 0.45);
+      padding: 1.5rem;
+      border-radius: 0.75rem;
     }
 
     .btn-primary,
@@ -94,20 +96,6 @@
       color: #007bff;
     }
   </style>
-
-
-
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-
-  </script>
 
 </head>
 
@@ -146,7 +134,7 @@
 
   <!-- Hero Section -->
   <div class="hero">
-    <div>
+    <div class="hero-text">
       <h1 class="display-4">Welcome to My Portfolio</h1>
       <p class="lead">I'm Joshua Ganschow, a mathematician, developer, and competitive programmer. Check out my work in
         combinatorics, custom tools for graph theory and combinatorics research, and algorithmic problem-solving.</p>
@@ -163,54 +151,55 @@
     </div>
     <section id="projects" class="mb-5">
       <div class="row">
-        <script>
-          //prevent fouc
-          (function () {
-            const savedTheme = localStorage.getItem('theme') || 'light-mode';
-            document.documentElement.classList.add(savedTheme);
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Undergraduate Research - Steiner Triple Systems</h5>
+              <p class="card-text">Research into the combinatorics/graph theory structure of Steiner Triple Systems</p>
+              <a href="projects/steiner-triple-systems-project.html" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
 
-            const root = document.documentElement;
-            root.classList.add(savedTheme);
+        <!-- Project Card 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Undergraduate Research - Prime Labeling</h5>
+              <p class="card-text">Collaboration with other undergraduate students in the study of prime labeling of
+                matrices.</p>
+              <a href="projects/prime-labeling-project.html" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
 
-            root.setAttribute('data-bs-theme', savedTheme == 'dark-mode' ? 'dark' : 'light');
-          })();
-        </script>
-        <div class="card-body">
-          <h5 class="card-title">Undergraduate Research - Steiner Triple Systems</h5>
-          <p class="card-text">Research into the combinatorics/graph theory structure of Steiner Triple Systems</p>
-          <a href="projects/steiner-triple-systems-project.html" class="btn btn-primary">Learn More</a>
+        <!-- Project Card 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Steiner Triple Systems Generator</h5>
+              <p class="card-text">JavaScript tool to generate a Steiner Triple System of a given order.</p>
+              <a href="tools/steiner-triple-generator.html" class="btn btn-primary">View Tool</a>
+            </div>
+          </div>
         </div>
       </div>
-  </div>
-
-  <!-- Project Card 2 -->
-  <div class="col-md-4 mb-4">
-    <div class="card h-100">
-      <div class="card-body">
-        <h5 class="card-title">Undergraduate Research - Prime Labeling</h5>
-        <p class="card-text">Collaboration with other undergraduate students in the study of prime labeling of matrices.
-        </p>
-        <a href="projects/prime-labeling-project.html" class="btn btn-primary">Learn More</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Project Card 3 -->
-  <div class="col-md-4 mb-4">
-    <div class="card h-100">
-      <div class="card-body">
-        <h5 class="card-title">Steiner Triple Systems Generator</h5>
-        <p class="card-text">JavaScript tool to generate a Steiner Triple System of a given order.</p>
-        <a href="tools/steiner-triple-generator.html" class="btn btn-primary">View Tool</a>
-      </div>
-    </div>
-  </div>
-  </div>
-  </section>
+    </section>
   </div>
 
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 
   <!-- Pasch Checker JS (Ensure it's loaded if needed) -->
   <script src="assets/js/pasch-checker.js"></script>

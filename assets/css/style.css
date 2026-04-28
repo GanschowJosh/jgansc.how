@@ -280,40 +280,20 @@ footer {
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
-/* Hero Section */
-.hero {
-  font-family: math;
-  background-image: url('../images/hero-background.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+/* Homepage Intro */
+.home-intro {
+  max-width: 900px;
+  margin: 0 auto 2.5rem auto;
 }
 
-.hero h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.hero p {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-}
-
-.hero .lead {
+.home-intro .lead {
   color: #ffffff;
-  padding: 0.5rem 10rem;
 }
 
-.hero-text {
-  background-color: rgba(0, 0, 0, 0.45);
-  padding: 1.5rem;
-  border-radius: 0.75rem;
+@media (min-width: 992px) {
+  .home-intro .lead {
+    padding: 0 5rem;
+  }
 }
 
 /* Graph Visualization Container */

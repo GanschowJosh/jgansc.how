@@ -314,3 +314,126 @@ footer {
   border: 1px solid #ccc;
   margin-top: 20px;
 }
+
+/* Projects Page Redesign */
+.projects-showcase {
+  max-width: 1100px;
+}
+
+.projects-hero {
+  border-bottom: 1px solid #2f2f2f;
+  margin-bottom: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.projects-kicker {
+  color: #03dac6;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+}
+
+.projects-hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+
+.projects-summary {
+  color: #b3b3b3;
+  margin: 0;
+  max-width: 680px;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-row {
+  align-items: center;
+  border-bottom: 1px solid #2b2b2b;
+  column-gap: 2rem;
+  display: grid;
+  grid-template-columns: minmax(220px, 32%) 1fr;
+  padding: 1.5rem 0;
+}
+
+.project-row:nth-child(even) .project-thumb {
+  order: 2;
+}
+
+.project-thumb {
+  border-radius: 12px;
+  display: block;
+  overflow: hidden;
+}
+
+.project-thumb img {
+  aspect-ratio: 16 / 10;
+  display: block;
+  filter: brightness(0.85);
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.35s ease, filter 0.35s ease;
+  width: 100%;
+}
+
+.project-row:hover .project-thumb img {
+  filter: brightness(1);
+  transform: scale(1.03);
+}
+
+.project-index {
+  color: #03dac6;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.4rem;
+}
+
+.project-details h2 {
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  margin-bottom: 0.55rem;
+}
+
+.project-details h2 a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.project-details h2 a:hover {
+  color: #03dac6;
+}
+
+.project-details p {
+  color: #c7c7c7;
+  margin-bottom: 0.6rem;
+}
+
+.project-action {
+  color: #03dac6;
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.project-action:hover {
+  color: #66f0df;
+}
+
+@media (max-width: 767px) {
+  .projects-hero {
+    margin-bottom: 0.2rem;
+  }
+
+  .project-row {
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    padding: 1.2rem 0;
+  }
+
+  .project-row:nth-child(even) .project-thumb {
+    order: 0;
+  }
+}

@@ -142,20 +142,17 @@ function visualizeTree(tree) {
         }
     });
 
-    // Adjust styles based on theme
-    if (document.body.classList.contains('dark-mode')) {
-        cy.style()
-            .selector('node')
-            .style({
-                'background-color': '#bb86fc',
-                'color': '#121212'
-            })
-            .selector('edge')
-            .style({
-                'line-color': '#bb86fc'
-            })
-            .update();
-    }
+    cy.style()
+        .selector('node')
+        .style({
+            'background-color': '#bb86fc',
+            'color': '#121212'
+        })
+        .selector('edge')
+        .style({
+            'line-color': '#bb86fc'
+        })
+        .update();
 }
 
 /**
@@ -216,32 +213,10 @@ function handleFormSubmission() {
 }
 
 /**
- * Function to handle theme changes and adjust graph styles accordingly
- */
-function handleThemeChanges() {
-    const toggleSwitch = document.getElementById('darkModeToggle');
-    toggleSwitch.addEventListener('change', () => {
-        const cyContainer = document.getElementById('cy');
-        if (toggleSwitch.checked) {
-            document.body.classList.remove('light-mode');
-            document.body.classList.add('dark-mode');
-            cyContainer.innerHTML = ''; // Clear existing graph
-            // Optionally, regenerate the tree visualization if desired
-        } else {
-            document.body.classList.remove('dark-mode');
-            document.body.classList.add('light-mode');
-            cyContainer.innerHTML = ''; // Clear existing graph
-            // Optionally, regenerate the tree visualization if desired
-        }
-    });
-}
-
-/**
  * Initialize the Prufer Code Decoder tool
  */
 function initializePruferCodeDecoder() {
     handleFormSubmission();
-    handleThemeChanges();
 }
 
 // Initialize when DOM is fully loaded

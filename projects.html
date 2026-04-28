@@ -3,15 +3,8 @@
 
 <head>
   <script>
-    //prevent fouc
     (function () {
-      const savedTheme = 'dark-mode';
-      document.documentElement.classList.add(savedTheme);
-
-      const root = document.documentElement;
-      root.classList.add(savedTheme);
-
-      root.setAttribute('data-bs-theme', 'dark');
+      document.documentElement.setAttribute('data-bs-theme', 'dark');
     })();
   </script>
   <meta charset="UTF-8">

@@ -2,17 +2,11 @@
 <html lang="en">
 <head>
     <script>
-        //prevent fouc
-        (function () {
-          const savedTheme = 'dark-mode';
-          document.documentElement.classList.add(savedTheme);
-    
-          const root = document.documentElement;
-          root.classList.add(savedTheme);
-    
-          root.setAttribute('data-bs-theme', 'dark');
-        })();
-      </script>
+    // Prevent FOUC by applying the fixed site appearance early.
+    (function () {
+      document.documentElement.setAttribute('data-bs-theme', 'dark');
+    })();
+  </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pasch Checker | Joshua Ganschow Portfolio</title>
@@ -28,7 +22,7 @@
 </head>
 <body>
     
-    <!-- Navbar with Dark Mode Toggle -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">Joshua Ganschow</a>

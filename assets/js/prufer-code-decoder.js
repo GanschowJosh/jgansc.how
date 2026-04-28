@@ -145,12 +145,12 @@ function visualizeTree(tree) {
     cy.style()
         .selector('node')
         .style({
-            'background-color': '#bb86fc',
-            'color': '#121212'
+            'background-color': '#03dac6',
+            'color': '#05201d'
         })
         .selector('edge')
         .style({
-            'line-color': '#bb86fc'
+            'line-color': '#03dac6'
         })
         .update();
 }

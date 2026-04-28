@@ -3,7 +3,6 @@
 
 <head>
   <script>
-    // Prevent FOUC by applying the fixed site appearance early.
     (function () {
       document.documentElement.setAttribute('data-bs-theme', 'dark');
     })();
@@ -17,11 +16,11 @@
 
 
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
-
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
 
 
 </head>
@@ -53,66 +52,70 @@
   </nav>
 
   <!-- Main Content -->
-  <div class="container mt-5 pt-5">
-    <h2 class="text-center mb-4">Mathematical Tools</h2>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-      <div class="col">
-        <div class="tool-card text-center">
-          <a href="tools/steiner-triple-generator.html">
-            <h5 class="tool-title">Steiner Triple Systems Generator</h5>
-            <p class="tool-description">Generate Steiner triple systems for combinatorial research (or fun)</p>
-          </a>
-        </div>
-      </div>
-      <div class="col">
-        <div class="tool-card text-center">
-          <a href="tools/pasch-checker.html">
-            <h5 class="tool-title">Pasch/Anti-Pasch Checker</h5>
-            <p class="tool-description">Check if a system is Pasch or anti-Pasch (iykyk)</p>
-          </a>
-        </div>
-      </div>
-      <div class="col">
-        <div class="tool-card text-center">
-          <a href="tools/is-steiner-triple-system.html">
-            <h5 class="tool-title">Is Steiner Triple System Checker</h5>
-            <p class="tool-description">Verify if a given set is a valid Steiner triple system</p>
-          </a>
-        </div>
-      </div>
-      <div class="col">
-        <div class="tool-card text-center">
-          <a href="tools/prufer-code-generator.html">
-            <h5 class="tool-title">Prufer Code Generator</h5>
-            <p class="tool-description">Generate a Prüfer code from a tree</p>
-          </a>
-        </div>
-      </div>
-      <div class="col">
-        <div class="tool-card text-center">
-          <a href="tools/prufer-code-decoder.html">
-            <h5 class="tool-title">Tree Generator from Prufer Code</h5>
-            <p class="tool-description">Decode a Prüfer code to reconstruct a tree</p>
-          </a>
-        </div>
-      </div>
-      <div class="col">
-        <div class="tool-card text-center">
-          <a href="tools/magic-square-checker.html">
-            <h5 class="tool-title">Magic Square Checker</h5>
-            <p class="tool-description">Check if a given square matrix is a magic square</p>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <main class="container projects-showcase mt-5 pt-5">
+    <header class="projects-hero">
+      <h1>Mathematical Tools</h1>
+    </header>
 
+    <section class="projects-list" aria-label="Tool list">
+      <article class="project-row">
+        <div class="project-details">
+          <p class="project-index">01</p>
+          <h2><a href="tools/steiner-triple-generator.html">Steiner Triple Systems Generator</a></h2>
+          <p>Generate Steiner triple systems for combinatorial research and experimentation.</p>
+          <a class="project-action" href="tools/steiner-triple-generator.html">Open tool</a>
+        </div>
+      </article>
+
+      <article class="project-row">
+        <div class="project-details">
+          <p class="project-index">02</p>
+          <h2><a href="tools/pasch-checker.html">Pasch/Anti-Pasch Checker</a></h2>
+          <p>Check whether a triple system contains Pasch configurations or is anti-Pasch.</p>
+          <a class="project-action" href="tools/pasch-checker.html">Open tool</a>
+        </div>
+      </article>
+
+      <article class="project-row">
+        <div class="project-details">
+          <p class="project-index">03</p>
+          <h2><a href="tools/is-steiner-triple-system.html">Is Steiner Triple System Checker</a></h2>
+          <p>Validate whether an input collection satisfies Steiner triple system rules.</p>
+          <a class="project-action" href="tools/is-steiner-triple-system.html">Open tool</a>
+        </div>
+      </article>
+
+      <article class="project-row">
+        <div class="project-details">
+          <p class="project-index">04</p>
+          <h2><a href="tools/prufer-code-generator.html">Prufer Code Generator</a></h2>
+          <p>Generate a Prufer sequence from a tree representation.</p>
+          <a class="project-action" href="tools/prufer-code-generator.html">Open tool</a>
+        </div>
+      </article>
+
+      <article class="project-row">
+        <div class="project-details">
+          <p class="project-index">05</p>
+          <h2><a href="tools/prufer-code-decoder.html">Tree Generator from Prufer Code</a></h2>
+          <p>Decode a Prufer sequence and reconstruct the corresponding tree.</p>
+          <a class="project-action" href="tools/prufer-code-decoder.html">Open tool</a>
+        </div>
+      </article>
+
+      <article class="project-row">
+        <div class="project-details">
+          <p class="project-index">06</p>
+          <h2><a href="tools/magic-square-checker.html">Magic Square Checker</a></h2>
+          <p>Determine whether a square matrix is a valid magic square.</p>
+          <a class="project-action" href="tools/magic-square-checker.html">Open tool</a>
+        </div>
+      </article>
+    </section>
+  </main>
 
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Pasch Checker JS (Ensure it's loaded if needed)
-  <script src="assets/js/pasch-checker.js"></script> -->
 
 </body>
 

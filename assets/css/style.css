@@ -1,9 +1,9 @@
 /* CSS Variables */
 :root {
-  --background-color: #121212;
+  --background-color: #20262c;
   --text-color: #e0e0e0;
-  --link-color: #bb86fc;
-  --link-hover-color: #d0a8ff;
+  --link-color: #03dac6;
+  --link-hover-color: #66f0df;
   --navbar-bg: #1f1f1f;
   --navbar-text: #e0e0e0;
   --card-bg: #1e1e1e;
@@ -11,14 +11,14 @@
   --card-border: #3e3e3e;
   --card-hover-bg: #333333;
   --card-hover-text: #ffffff;
-  --btn-primary-bg: #bb86fc;
-  --btn-primary-border: #bb86fc;
-  --btn-primary-hover-bg: #9c5fe0;
-  --btn-primary-hover-border: #9c5fe0;
-  --btn-secondary-bg: #03dac6;
-  --btn-secondary-border: #03dac6;
-  --btn-secondary-hover-bg: #018786;
-  --btn-secondary-hover-border: #018786;
+  --btn-primary-bg: #03dac6;
+  --btn-primary-border: #03dac6;
+  --btn-primary-hover-bg: #00b8a9;
+  --btn-primary-hover-border: #00b8a9;
+  --btn-secondary-bg: #24343a;
+  --btn-secondary-border: #2f4f56;
+  --btn-secondary-hover-bg: #2f4a50;
+  --btn-secondary-hover-border: #3a6068;
 }
 
 html {
@@ -41,27 +41,40 @@ html {
 }
 
 .btn-primary {
-  background-color: #bb86fc;
-  border: 1px solid #bb86fc;
-  color: #ffffff;
+  --bs-btn-color: #06221f;
+  --bs-btn-bg: var(--btn-primary-bg);
+  --bs-btn-border-color: var(--btn-primary-border);
+  --bs-btn-hover-color: #041816;
+  --bs-btn-hover-bg: var(--btn-primary-hover-bg);
+  --bs-btn-hover-border-color: var(--btn-primary-hover-border);
+  --bs-btn-focus-shadow-rgb: 3, 218, 198;
+  --bs-btn-active-color: #041816;
+  --bs-btn-active-bg: #00a898;
+  --bs-btn-active-border-color: #00a898;
+  --bs-btn-disabled-color: #06221f;
+  --bs-btn-disabled-bg: #02b7a6;
+  --bs-btn-disabled-border-color: #02b7a6;
+  background-color: var(--btn-primary-bg);
+  border: 1px solid var(--btn-primary-border);
+  color: #06221f;
 }
 
 .btn-primary:hover {
-  background-color: #9c5fe0;
-  border: 1px solid #9c5fe0;
-  color: #ffffff;
+  background-color: var(--btn-primary-hover-bg);
+  border: 1px solid var(--btn-primary-hover-border);
+  color: #041816;
 }
 
 .btn-secondary {
-  background-color: #03dac6;
-  border: 1px solid #03dac6;
-  color: #121212;
+  background-color: var(--btn-secondary-bg);
+  border: 1px solid var(--btn-secondary-border);
+  color: #b9efe7;
 }
 
 .btn-secondary:hover {
-  background-color: #018786;
-  border: 1px solid #018786;
-  color: #121212;
+  background-color: var(--btn-secondary-hover-bg);
+  border: 1px solid var(--btn-secondary-hover-border);
+  color: #d8fffa;
 }
 
 /* Tool Card Styles */
@@ -96,12 +109,12 @@ html {
 }
 
 .tool-card a {
-  color: #66b2ff;
+  color: var(--link-color);
   text-decoration: none;
 }
 
 .tool-card a:hover {
-  color: #99ccff;
+  color: var(--link-hover-color);
 }
 
 .card {
@@ -160,7 +173,7 @@ html {
 }
 
 .nav-link {
-  color: #bb86fc;
+  color: var(--link-color);
   font-weight: 500;
   padding: 8px 12px;
   transition: color 0.3s ease;
@@ -182,16 +195,16 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  background-color: #121212;
+  background-color: var(--background-color);
   color: #e0e0e0;
 }
 
 a {
-  color: #bb86fc;
+  color: var(--link-color);
 }
 
 a:hover {
-  color: #d0a8ff;
+  color: var(--link-hover-color);
 }
 
 /* Forms and Inputs */
@@ -206,7 +219,7 @@ a:hover {
 
 .form-control:focus {
   background-color: #2c2c2c;
-  border-color: #bb86fc;
+  border-color: var(--link-color);
   color: #ffffff;
   box-shadow: none;
 }

@@ -372,6 +372,11 @@ footer {
   padding: 1.5rem 0;
 }
 
+.project-row > .project-details:only-child {
+  grid-column: 1 / -1;
+  max-width: 860px;
+}
+
 .project-row:nth-child(even) .project-thumb {
   order: 2;
 }
@@ -433,6 +438,35 @@ footer {
 
 .project-action:hover {
   color: #66f0df;
+}
+
+.about-row {
+  align-items: flex-start;
+}
+
+.about-list {
+  margin-top: 0.35rem;
+}
+
+.about-list .list-group-item {
+  background-color: #1b2228;
+  border-color: #2f3f45;
+}
+
+.about-accordion {
+  margin-top: 0.35rem;
+}
+
+.about-accordion .accordion-button {
+  font-size: 0.98rem;
+}
+
+.about-meta {
+  color: #9cb3b5;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.6rem;
 }
 
 @media (max-width: 767px) {

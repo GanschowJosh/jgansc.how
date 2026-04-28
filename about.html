@@ -3,11 +3,10 @@
 
 <head>
     <script>
-    // Prevent FOUC by applying the fixed site appearance early.
-    (function () {
-      document.documentElement.setAttribute('data-bs-theme', 'dark');
-    })();
-  </script>
+        (function () {
+            document.documentElement.setAttribute('data-bs-theme', 'dark');
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Joshua Ganschow Portfolio</title>
@@ -16,11 +15,10 @@
     <script src="assets/js/script.js"></script>
 
     <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
-
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -50,227 +48,234 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="container mt-5 pt-5">
-        <!-- Introduction Section -->
-        <section id="introduction" class="mb-5">
-            <h2>About Me</h2>
-            <p>
-                Hello! I'm Joshua Ganschow, a Computer Science and Mathematics student at Dakota State University with a
-                strong background in competitive programming and algorithm design for combinatorics and graph theory. I
-                enjoy working on cool projects and continuously expanding my knowledge in the fields of graph theory,
-                combinatorics, and all things computer science and math.
-            </p>
-        </section>
+    <main class="container projects-showcase mt-5 pt-5">
+        <header class="projects-hero">
+            <h1>About Me</h1>
+            <p class="projects-summary">Computer Science and Mathematics student focused on combinatorics, graph theory, and practical software engineering.</p>
+        </header>
 
-        <!-- Skills Section -->
-        <section id="skills" class="mb-5">
-            <h3>Skills</h3>
-            <ul class="list-group">
-                <li class="list-group-item"><strong>Languages:</strong> Python, C/C++, C#, SQL</li>
-                <li class="list-group-item"><strong>Systems &amp; Tools:</strong> Git, Docker, Azure DevOps, SQL Server</li>
-                <li class="list-group-item"><strong>Core Areas:</strong> Algorithms &amp; Data Structures, Graph Theory, Combinatorics, Competitive Programming</li>
-                <li class="list-group-item"><strong>Software Engineering:</strong> REST APIs, CI/CD, Automated Testing, Full-Stack Development</li>
-            </ul>
-        </section>
+        <section class="projects-list" aria-label="About sections">
+            <article class="project-row about-row" id="intro">
+                <div class="project-details">
+                    <p class="project-index">01</p>
+                    <h2>Profile</h2>
+                    <p>Hello! I'm Joshua Ganschow, a Computer Science and Mathematics student at Dakota State University with a strong background in competitive programming and algorithm design for combinatorics and graph theory.</p>
+                    <p>I enjoy building tools, solving hard algorithmic problems, and applying mathematics to software systems.</p>
+                </div>
+            </article>
 
-        <!-- Experience Section -->
-        <section id="experience" class="mb-5">
-            <h3>Experience</h3>
-            <div class="accordion" id="experienceAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFour">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            Software Engineering Intern at Omnitech, Inc.
-                        </button>
-                    </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                        data-bs-parent="#experienceAccordion">
-                        <div class="accordion-body">
-                            <strong>May 2025 - Present</strong>
-                            <ul>
-                                <li>Developed an internal contract management system used by sales, accounting, project managers, and engineers.</li>
-                                <li>Built full-stack features using ASP.NET, C#, SQL, and TypeScript for time tracking and billing workflows.</li>
-                                <li>Implemented automated end-to-end and regression tests for enterprise applications.</li>
-                                <li>Set up CI/CD pipelines in Azure DevOps for build and deployment automation.</li>
-                                <li>Optimized SQL Server schemas and queries.</li>
-                            </ul>
+            <article class="project-row about-row" id="skills">
+                <div class="project-details">
+                    <p class="project-index">02</p>
+                    <h2>Skills</h2>
+                    <ul class="list-group about-list">
+                        <li class="list-group-item"><strong>Languages:</strong> Python, C/C++, C#, SQL</li>
+                        <li class="list-group-item"><strong>Systems &amp; Tools:</strong> Git, Docker, Azure DevOps, SQL Server</li>
+                        <li class="list-group-item"><strong>Core Areas:</strong> Algorithms &amp; Data Structures, Graph Theory, Combinatorics, Competitive Programming</li>
+                        <li class="list-group-item"><strong>Software Engineering:</strong> REST APIs, CI/CD, Automated Testing, Full-Stack Development</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="project-row about-row" id="experience">
+                <div class="project-details">
+                    <p class="project-index">03</p>
+                    <h2>Experience</h2>
+                    <div class="accordion about-accordion" id="experienceAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    Software Engineering Intern at Omnitech, Inc.
+                                </button>
+                            </h3>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                data-bs-parent="#experienceAccordion">
+                                <div class="accordion-body">
+                                    <p class="about-meta">May 2025 - Present</p>
+                                    <ul>
+                                        <li>Developed an internal contract management system used by sales, accounting, project managers, and engineers.</li>
+                                        <li>Built full-stack features using ASP.NET, C#, SQL, and TypeScript for time tracking and billing workflows.</li>
+                                        <li>Implemented automated end-to-end and regression tests for enterprise applications.</li>
+                                        <li>Set up CI/CD pipelines in Azure DevOps for build and deployment automation.</li>
+                                        <li>Optimized SQL Server schemas and queries.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    GROWSTEM Student Mentor at Dakota State University
+                                </button>
+                            </h3>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#experienceAccordion">
+                                <div class="accordion-body">
+                                    <p class="about-meta">Aug. 2024 - Present</p>
+                                    <ul>
+                                        <li>Mentor recipients of the GROWSTEM scholarship.</li>
+                                        <li>Work with program coordinators to support student success.</li>
+                                        <li>Provide academic support and supplemental instruction.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            GROWSTEM Student Mentor at Dakota State University
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                        data-bs-parent="#experienceAccordion">
-                        <div class="accordion-body">
-                            <strong>Aug. 2024 - Present</strong>
-                            <ul>
-                                <li>Mentor recipients of the GROWSTEM scholarship</li>
-                                <li>Work with program coordinators to support student success</li>
-                                <li>Provide academic support and supplemental instruction</li>
-                            </ul>
+            </article>
+
+            <article class="project-row about-row" id="leadership">
+                <div class="project-details">
+                    <p class="project-index">04</p>
+                    <h2>Leadership &amp; Activities</h2>
+                    <div class="accordion about-accordion" id="leadershipAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="leadHeadingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#leadCollapseOne" aria-expanded="false" aria-controls="leadCollapseOne">
+                                    Competitive Programming Club at Dakota State University (President)
+                                </button>
+                            </h3>
+                            <div id="leadCollapseOne" class="accordion-collapse collapse" aria-labelledby="leadHeadingOne"
+                                data-bs-parent="#leadershipAccordion">
+                                <div class="accordion-body">
+                                    <p class="about-meta">Aug. 2024 - Present</p>
+                                    <ul>
+                                        <li>Lead weekly meetings on algorithms, data structures, and problem solving.</li>
+                                        <li>Led and competed on a team that qualified for the ICPC North America Championship.</li>
+                                        <li>Led and competed on a team that placed second in the DigiKey Collegiate Computing Competition (DKC3).</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="leadHeadingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#leadCollapseTwo" aria-expanded="false" aria-controls="leadCollapseTwo">
+                                    Math Club at Dakota State University (Leader)
+                                </button>
+                            </h3>
+                            <div id="leadCollapseTwo" class="accordion-collapse collapse" aria-labelledby="leadHeadingTwo"
+                                data-bs-parent="#leadershipAccordion">
+                                <div class="accordion-body">
+                                    <p class="about-meta">Aug. 2024 - Present</p>
+                                    <ul>
+                                        <li>Host sessions on advanced mathematical topics and combinatorics.</li>
+                                        <li>Foster a collaborative environment for exploring math beyond coursework.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-        </section><!-- Custom JS -->
-        <script src="assets/js/script.js"></script>
+            </article>
 
-        <!-- Leadership & Activities Section -->
-        <section id="leadership" class="mb-5">
-            <h3>Leadership &amp; Activities</h3>
-            <div class="accordion" id="leadershipAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="leadHeadingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#leadCollapseOne" aria-expanded="false" aria-controls="leadCollapseOne">
-                            Competitive Programming Club at Dakota State University (President)
-                        </button>
-                    </h2>
-                    <div id="leadCollapseOne" class="accordion-collapse collapse" aria-labelledby="leadHeadingOne"
-                        data-bs-parent="#leadershipAccordion">
-                        <div class="accordion-body">
-                            <strong>Aug. 2024 - Present</strong>
-                            <ul>
-                                <li>Lead weekly meetings on algorithms, data structures, and problem solving.</li>
-                                <li>Led and competed on a team that qualified for the ICPC North America Championship.</li>
-                                <li>Led and competed on a team that placed second in the DigiKey Collegiate Computing Competition (DKC3).</li>
-                            </ul>
+            <article class="project-row about-row" id="education">
+                <div class="project-details">
+                    <p class="project-index">05</p>
+                    <h2>Education</h2>
+                    <div class="accordion about-accordion" id="educationAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="eduHeadingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#eduCollapseOne" aria-expanded="false" aria-controls="eduCollapseOne">
+                                    Bachelors of Science in Computer Science and Mathematics
+                                </button>
+                            </h3>
+                            <div id="eduCollapseOne" class="accordion-collapse collapse" aria-labelledby="eduHeadingOne"
+                                data-bs-parent="#educationAccordion">
+                                <div class="accordion-body">
+                                    <p class="about-meta">Dakota State University, Madison, South Dakota</p>
+                                    <p>2023 - 2026 (anticipated)</p>
+                                    <p>GPA: 3.96</p>
+                                    <p><strong>Relevant coursework</strong></p>
+                                    <ul>
+                                        <li>Programming Fundamentals</li>
+                                        <li>Data Structures</li>
+                                        <li>Object-Oriented Design</li>
+                                        <li>Structured Systems Analysis</li>
+                                        <li>Discrete Mathematics</li>
+                                        <li>Combinatorics / Combinatorial Designs</li>
+                                        <li>Linear Algebra</li>
+                                        <li>Game Theory</li>
+                                        <li>Statistics</li>
+                                        <li>Calculus</li>
+                                        <li>Number Theory and Cryptography</li>
+                                        <li>Assembly Language</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="eduHeadingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#eduCollapseTwo" aria-expanded="false" aria-controls="eduCollapseTwo">
+                                    Masters of Science in Computer Science
+                                </button>
+                            </h3>
+                            <div id="eduCollapseTwo" class="accordion-collapse collapse" aria-labelledby="eduHeadingTwo"
+                                data-bs-parent="#educationAccordion">
+                                <div class="accordion-body">
+                                    <p class="about-meta">Dakota State University, Madison, South Dakota</p>
+                                    <p>2025 - 2027 (anticipated)</p>
+                                    <p>4+1 Program offered through DSU will enable me to finish a master's in one additional year through dual-credit coursework in the final year of the BS program.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </article>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="leadHeadingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#leadCollapseTwo" aria-expanded="false" aria-controls="leadCollapseTwo">
-                            Math Club at Dakota State University (Leader)
-                        </button>
-                    </h2>
-                    <div id="leadCollapseTwo" class="accordion-collapse collapse" aria-labelledby="leadHeadingTwo"
-                        data-bs-parent="#leadershipAccordion">
-                        <div class="accordion-body">
-                            <strong>Aug. 2024 - Present</strong>
-                            <ul>
-                                <li>Host sessions on advanced mathematical topics and combinatorics.</li>
-                                <li>Foster a collaborative environment for exploring math beyond coursework.</li>
-                            </ul>
+            <article class="project-row about-row" id="research">
+                <div class="project-details">
+                    <p class="project-index">06</p>
+                    <h2>Research &amp; Projects</h2>
+                    <div class="accordion about-accordion" id="projectAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="projHeadingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#projCollapseOne" aria-expanded="false" aria-controls="projCollapseOne">
+                                    Small Antiperfect Steiner Triple Systems
+                                </button>
+                            </h3>
+                            <div id="projCollapseOne" class="accordion-collapse collapse" aria-labelledby="projHeadingOne"
+                                data-bs-parent="#projectAccordion">
+                                <div class="accordion-body">
+                                    <p class="about-meta">Nov. 2023 - Feb. 2026 | Python, C/C++</p>
+                                    <ul>
+                                        <li>First author on a peer-reviewed publication in <i>Discrete Mathematics</i>.</li>
+                                        <li>Implemented a modified Stinson hill-climbing algorithm to construct Steiner Triple Systems.</li>
+                                        <li>Designed pruning strategies to reduce exponential search space.</li>
+                                        <li>Parallelized enumeration of approximately 6,000,000 systems.</li>
+                                        <li><a href="https://doi.org/10.1016/j.disc.2026.115061" target="_blank" rel="noopener noreferrer">DOI: 10.1016/j.disc.2026.115061</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section id="education" class="mb-5">
-          <h3>Education</h3>
-          <div class="accordion" id="educationAccordion">
-              <!-- Education Item 1 -->
-              <div class="accordion-item">
-                  <h2 class="accordion-header" id="eduHeadingOne">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                          data-bs-target="#eduCollapseOne" aria-expanded="false" aria-controls="eduCollapseOne">
-                          Bachelors of Science in Computer Science and Mathematics
-                      </button>
-                  </h2>
-                  <div id="eduCollapseOne" class="accordion-collapse collapse" aria-labelledby="eduHeadingOne"
-                      data-bs-parent="#educationAccordion">
-                      <div class="accordion-body">
-                          <strong>Dakota State University, Madison, South Dakota</strong>
-                          <p>2023 - 2026 (anticipated)</p>
-                          <p>GPA: 3.96</p>
-                          <ul>
-                              <li>Relevant coursework</li>
-                              <ul>
-                                  <li>Programming Fundamentals</li>
-                                  <li>Data Structures</li>
-                                  <li>Object-Oriented Design</li>
-                                  <li>Structured Systems Analysis</li>
-                                  <li>Discrete Mathematics</li>
-                                  <li>Combinatorics / Combinatorial Designs</li>
-                                  <li>Linear Algebra</li>
-                                  <li>Game Theory</li>
-                                  <li>Statistics</li>
-                                  <li>Calculus</li>
-                                  <li>Number Theory and Cryptography</li>
-                                  <li>Assembly Language</li>
-                              </ul>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-              <div class="accordion-item">
-                  <h2 class="accordion-header" id="eduHeadingTwo">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                          data-bs-target="#eduCollapseTwo" aria-expanded="false" aria-controls="eduCollapseTwo">
-                          Masters of Science in Computer Science
-                      </button>
-                  </h2>
-                  <div id="eduCollapseTwo" class="accordion-collapse collapse" aria-labelledby="eduHeadingTwo"
-                      data-bs-parent="#educationAccordion">
-                      <div class="accordion-body">
-                          <strong>Dakota State University, Madison, South Dakota</strong>
-                          <p>2025 - 2027 (anticipated)</p>
-                          <p>4+1 Program offered through DSU will enable me to finish masters in just 1 additional year. This 
-                                is possible because I am able to take "dual-credit" classes that count for both Bachelors
-                              and Masters in the final year of BS program.
-                          </p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-        </section>
+            </article>
 
-        <!-- Research & Projects Section -->
-        <section id="projects" class="mb-5">
-            <h3>Research &amp; Projects</h3>
-            <div class="accordion" id="projectAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="projHeadingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#projCollapseOne" aria-expanded="false" aria-controls="projCollapseOne">
-                            Small Antiperfect Steiner Triple Systems
-                        </button>
-                    </h2>
-                    <div id="projCollapseOne" class="accordion-collapse collapse" aria-labelledby="projHeadingOne"
-                        data-bs-parent="#projectAccordion">
-                        <div class="accordion-body">
-                            <strong>Nov. 2023 - Feb. 2026 | Python, C/C++</strong>
-                            <ul>
-                                <li>First author on a peer-reviewed publication in <i>Discrete Mathematics</i>.</li>
-                                <li>Implemented a modified Stinson hill-climbing algorithm to construct Steiner Triple Systems.</li>
-                                <li>Designed pruning strategies to reduce exponential search space.</li>
-                                <li>Parallelized enumeration of approximately 6,000,000 systems.</li>
-                                <li><a href="https://doi.org/10.1016/j.disc.2026.115061" target="_blank">DOI: 10.1016/j.disc.2026.115061</a></li>
-                            </ul>
-                        </div>
-                    </div>
+            <article class="project-row about-row" id="contact">
+                <div class="project-details">
+                    <p class="project-index">07</p>
+                    <h2>Contact</h2>
+                    <p>If you'd like to connect, reach out through any of the links below.</p>
+                    <ul class="list-group about-list">
+                        <li class="list-group-item"><strong>Personal Email:</strong> <a href="mailto:ganschowjosh@gmail.com">ganschowjosh@gmail.com</a></li>
+                        <li class="list-group-item"><strong>School Email:</strong> <a href="mailto:Joshua.Ganschow@trojans.dsu.edu">Joshua.Ganschow@trojans.dsu.edu</a></li>
+                        <li class="list-group-item"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/joshua-ganschow/" target="_blank" rel="noopener noreferrer">linkedin.com/in/joshua-ganschow</a></li>
+                    </ul>
                 </div>
-            </div>
+            </article>
         </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="mb-5">
-            <h3>Contact Me</h3>
-            <p>If you'd like to get in touch, feel free to reach out through any of the platforms below:</p>
-            <ul class="list-group">
-                <li class="list-group-item">📧 Personal Email: <a
-                        href="mailto:ganschowjosh@gmail.com">ganschowjosh@gmail.com</a></li>
-                <li class="list-group-item">📧 School Email: <a
-                        href="mailto:Joshua.Ganschow@trojans.dsu.edu">Joshua.Ganschow@trojans.dsu.edu</a></li>
-                <li class="list-group-item">🔗 LinkedIn: <a href="https://www.linkedin.com/in/joshua-ganschow/"
-                        target="_blank">https://www.linkedin.com/in/joshua-ganschow/</a></li>
-            </ul>
-        </section>
-    </div>
+    </main>
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>

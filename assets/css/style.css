@@ -30,34 +30,37 @@ html {
   padding: 12px 25px;
   border-radius: 10px;
   font-weight: 600;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: box-shadow 0.2s, background-color 0.2s, color 0.2s;
 }
 
-.btn-primary:hover, .btn-secondary:hover {
-  transform: scale(1.05);
+.btn,
+.btn:hover,
+.btn:focus,
+.btn:active {
+  transform: none !important;
 }
 
 .btn-primary {
   background-color: #bb86fc;
-  border: none;
+  border: 1px solid #bb86fc;
   color: #ffffff;
 }
 
 .btn-primary:hover {
   background-color: #9c5fe0;
-  border: none;
+  border: 1px solid #9c5fe0;
   color: #ffffff;
 }
 
 .btn-secondary {
   background-color: #03dac6;
-  border: none;
+  border: 1px solid #03dac6;
   color: #121212;
 }
 
 .btn-secondary:hover {
   background-color: #018786;
-  border: none;
+  border: 1px solid #018786;
   color: #121212;
 }
 
@@ -67,13 +70,12 @@ html {
   color: #ffffff;
   border-radius: 12px;
   padding: 20px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: box-shadow 0.3s;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   height: 100%;
 }
 
 .tool-card:hover {
-  transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
@@ -108,12 +110,11 @@ html {
   border: 1px solid #3e3e3e;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.3s, background-color 0.3s, color 0.3s, border-color 0.3s;
+  transition: box-shadow 0.3s, background-color 0.3s, color 0.3s, border-color 0.3s;
   cursor: pointer;
 }
 
 .card:hover {
-  transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   background-color: #333333;
   color: #ffffff;

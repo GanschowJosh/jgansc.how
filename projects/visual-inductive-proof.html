@@ -1,113 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <script>
-    // Prevent FOUC by applying the fixed site appearance early.
-    (function () {
-      document.documentElement.setAttribute('data-bs-theme', 'dark');
-    })();
-  </script>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Visual Inductive Proof | Joshua Ganschow Portfolio</title>
-  
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
+  <meta name="description" content="Joshua Ganschow's Matplotlib visualization of an inductive proof using L-shaped triominoes.">
+  <title>Visual Inductive Proof | Joshua Ganschow</title>
+  <script>
+    try { document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark"; }
+    catch (_) { document.documentElement.dataset.theme = "dark"; }
+  </script>
   <link rel="stylesheet" href="../assets/css/style.css">
-  
+  <script defer src="../assets/js/script.js"></script>
 </head>
 <body>
-  
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="../index.html">Joshua Ganschow</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item">
-            <a class="nav-link" href="../projects.html">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../tools.html">Tools</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../about.html">About</a>
-          </li>
-        </ul>
-      </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="../index.html" aria-label="Joshua Ganschow, home">JG</a>
+      <nav aria-label="Primary navigation">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#resume">Resume</a>
+        <button class="theme-toggle" type="button" aria-label="Switch to light mode" title="Switch color theme"><span aria-hidden="true">☼</span></button>
+      </nav>
     </div>
-  </nav>
-  
-  <!-- Main Content -->
-  <div class="container mt-5 pt-5">
-    <div class="row">
-      
-      <!-- Project Title and Image -->
-      <div class="col-12 text-center mb-4">
-        <h1>Visual Inductive Proof</h1>
+  </header>
+
+  <main class="case-study shell" id="main">
+    <header class="case-header">
+      <p class="meta">Visualization · Python · Matplotlib</p>
+      <h1>Visual Inductive Proof</h1>
+      <p class="case-lede">
+        A visual demonstration that a 2<sup>n</sup> x 2<sup>n</sup> board with any one square removed can be covered
+        completely by L-shaped triominoes.
+      </p>
+      <div class="case-actions">
+        <a href="https://github.com/GanschowJosh/DiscreteMath/blob/main/triominoes.py" target="_blank" rel="noopener noreferrer">Source</a>
+        <a href="../index.html#projects">Back to projects</a>
       </div>
-      
-      <!-- Overview Section -->
-      <div class="col-12 mb-4">
-        <h2>Overview</h2>
-        <p>A visual representation using Matplotlib to illustrate a proof by induction for the statement: "Prove that for any 2^n by 2^n grid with any one square removed, a number of L-shaped triominoes can be made to cover the entire board."</p>
+    </header>
+
+    <div class="case-grid">
+      <div class="case-body">
+        <section>
+          <h2>About the project</h2>
+          <p>
+            The program uses Matplotlib to turn a proof by induction into a step-by-step visual construction. Each
+            triomino is labeled to indicate the order in which it was placed on the board.
+          </p>
+          <p>
+            I first wrote the inductive proof for a Discrete Mathematics assignment, then built the visualization to
+            make the abstract argument easier to understand. After seeing the script, my professor invited me to join
+            his Steiner triple systems research, introducing me to a field of mathematics I have grown to love.
+          </p>
+        </section>
+        <section>
+          <h2>Work completed</h2>
+          <ul>
+            <li>Implemented a recursive mathematical construction in Python.</li>
+            <li>Created a clear Matplotlib visualization of an abstract proof.</li>
+            <li>Strengthened my understanding of induction and combinatorial mathematics.</li>
+            <li>Converted a mathematical argument into an executable algorithm.</li>
+          </ul>
+          <p>
+            Run the Python script, enter the requested grid size, then choose the row and column of the missing square.
+            The program renders the resulting tiling and labels the placement order.
+          </p>
+          <img class="case-image" src="../assets/images/triominoes.png" alt="A tiled square grid with one square removed and numbered L-shaped triominoes" width="553" height="528">
+        </section>
       </div>
-      
-      <!-- Impetus Section -->
-      <div class="col-12 mb-4">
-        <h2>Impetus</h2>
-        <p>For an assignment for my discrete math class, I was asked to prove the aforementioned statement. After crafting the inductive proof, I realized that it would be fun to write a visualization for it in Python. After writing the script and showing my professor, he asked me to join his research project on Steiner Triple Systems. This introduced me to a field of mathematics with which I had little experience at the time, but I have grown to love.</p>
-        <ul>
-          <li>Interest in combinatorial mathematics and visual proofs.</li>
-          <li>Desire to create an visualization tool for understanding my inductive proof.</li>
-          <li>Challenge of translating abstract mathematical concepts into visual representations.</li>
-        </ul>
-      </div>
-      
-      <!-- Usage/Output Section -->
-      <div class="col-12 mb-4">
-        <h2>Usage &amp; Output</h2>
-        <p>Running the Python script, the user will be prompted to enter a number for the size of the grid. Then, the user will be prompted to enter the row and column number for the empty block.</p>
-        <ul>
-          <li>Usage: Run the Python script to generate visual proofs for different values of n, row and column.</li>
-          <li>Output: Matplotlib visualization showing the grid generated using my inductive proof, labeled to indicated the order in which the triominoes were placed into the grid.</li>
-        </ul>
-        <img src="../assets/images/triominoes.png" class="img-fluid mt-3" alt="Example Output">
-      </div>
-      
-      <!-- Skills Developed/Applied Section -->
-      <div class="col-12 mb-4">
-        <h2>Skills Developed &amp; Applied</h2>
-        <ul>
-          <li>Python Programming: Enhanced proficiency in Python, particularly with libraries like Matplotlib.</li>
-          <li>Mathematical Reasoning: Deepened understanding of inductive proofs and combinatorial mathematics.</li>
-          <li>Data Visualization: Improved skills in creating clear and informative visual representations of complex concepts.</li>
-          <li>Problem-Solving: Applied logical reasoning to translate mathematical theory into executable code.</li>
-        </ul>
-      </div>
-      
-      <!-- GitHub Link -->
-      <div class="col-12 text-center mb-4">
-        <a href="https://github.com/GanschowJosh/DiscreteMath/blob/main/triominoes.py" class="btn btn-primary" target="_blank">View on GitHub</a>
-      
-      <!-- Back to Projects Button -->
-        <a href="../projects.html" class="btn btn-secondary">Back to Projects</a>
-      </div>
-      
+
+      <aside class="case-aside" aria-label="Project details">
+        <dl>
+          <dt>Focus</dt>
+          <dd>Python, Matplotlib, proof by induction, combinatorics, and data visualization</dd>
+        </dl>
+      </aside>
     </div>
-  </div>
-  
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <!-- Custom JS -->
-  <script src="../assets/js/script.js"></script>
-  
+  </main>
 </body>
 </html>

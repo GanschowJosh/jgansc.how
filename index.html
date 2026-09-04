@@ -1,126 +1,269 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-  <script>
-    // Prevent FOUC by applying the fixed site appearance early.
-    (function () {
-      document.documentElement.setAttribute('data-bs-theme', 'dark');
-    })();
-  </script>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Joshua Ganschow | Mathematician & Developer Portfolio</title>
-
-  <!-- Custom JS -->
-  <script src="assets/js/script.js"></script>
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
-
-
-</head>
-
-<body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">Joshua Ganschow</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item">
-            <a class="nav-link" href="projects.html">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="tools.html">Tools</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Main Content -->
-  <div class="container mt-5 pt-5">
-    <section class="home-intro text-center mb-5">
-      <h1 class="display-5">Hi! I'm Joshua Ganschow</h1>
-      <p class="lead">I am a mathematician, software engineer, and competitive programmer. Check out my work in
-        combinatorics, custom tools for graph theory and combinatorics research, and algorithmic problem-solving.</p>
-      <a class="btn btn-primary btn-lg me-2" href="projects.html" role="button">Explore Projects</a>
-      <a class="btn btn-secondary btn-lg" href="tools.html" role="button">Mathematical Tools</a>
-    </section>
-
-    <hr>
-    <br>
-
-    <div class="text-center mb-5">
-      <h2>Featured Projects and Tools</h2>
-    </div>
-    <section id="projects" class="mb-5">
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Research - Steiner Triple Systems</h5>
-              <p class="card-text">Research into the combinatorics/graph theory structure of Steiner Triple Systems</p>
-              <a href="projects/steiner-triple-systems-project.html" class="btn btn-primary stretched-link">Learn More</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project Card 2 -->
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Research - Prime Labeling</h5>
-              <p class="card-text">Collaboration with other undergraduate students in the study of prime labeling of
-                matrices.</p>
-              <a href="projects/prime-labeling-project.html" class="btn btn-primary stretched-link">Learn More</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project Card 3 -->
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Steiner Triple Systems Generator</h5>
-              <p class="card-text">JavaScript tool to generate a Steiner Triple System of a given order.</p>
-              <a href="tools/steiner-triple-generator.html" class="btn btn-primary stretched-link">View Tool</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+  <meta name="description" content="Joshua Ganschow is a software engineer and mathematics student working in full-stack development, algorithms, graph theory, and combinatorics.">
+  <title>Joshua Ganschow</title>
   <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
+    try { document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark"; }
+    catch (_) { document.documentElement.dataset.theme = "dark"; }
   </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script defer src="assets/js/script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Pasch Checker JS (Ensure it's loaded if needed) -->
-  <script src="assets/js/pasch-checker.js"></script>
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="#top">Joshua Ganschow</a>
+      <nav aria-label="Primary navigation">
+        <a href="#projects">Projects</a>
+        <a href="#resume">Resume</a>
+        <button class="theme-toggle" type="button" aria-label="Switch to light mode" title="Switch color theme"><span aria-hidden="true">☼</span></button>
+      </nav>
+    </div>
+  </header>
 
+  <main class="shell" id="main">
+    <section class="intro" id="top">
+      <h1>Joshua Ganschow</h1>
+      <p class="role">Software engineer, mathematics student, and PassageMath maintainer</p>
+      <p class="intro-copy">
+        I study Computer Science and Mathematics at Dakota State University. I work on full-stack software,
+        algorithms, competitive programming, graph theory, and combinatorics. I also contribute to SageMath and
+        help maintain PassageMath.
+      </p>
+      <p class="contact-links">
+        <a href="mailto:ganschowjosh@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/joshua-ganschow/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/GanschowJosh" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </p>
+    </section>
+
+    <section class="page-section" id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projects</h2>
+
+      <div class="project-list">
+        <article class="project">
+          <div>
+            <h3>Small Antiperfect Steiner Triple Systems</h3>
+            <p>
+              First-author research published in <em>Discrete Mathematics</em>. I implemented a modified Stinson
+              hill-climbing algorithm, designed pruning strategies, and parallelized the enumeration of roughly six
+              million systems.
+            </p>
+            <p class="meta">Python, C/C++, combinatorics, parallel computing</p>
+          </div>
+          <p class="project-links">
+            <a href="projects/steiner-triple-systems-project.html">Details</a>
+            <a href="https://doi.org/10.1016/j.disc.2026.115061" target="_blank" rel="noopener noreferrer">Publication</a>
+            <a href="https://github.com/GanschowJosh/Steiner-Triple-Systems-Research" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </p>
+        </article>
+
+        <article class="project">
+          <div>
+            <h3>SageMath and PassageMath</h3>
+            <p>
+              I contributed a randomized Stinson hill-climbing implementation for generating Steiner triple systems
+              to SageMath. The merged change includes tests and documentation and keeps the existing construction as
+              the default. I also serve as a maintainer of PassageMath, a modular, pip-installable fork of SageMath.
+            </p>
+            <p class="meta">Open source, Python, mathematical software</p>
+          </div>
+          <p class="project-links">
+            <a href="https://github.com/sagemath/sage/pull/42510" target="_blank" rel="noopener noreferrer">SageMath contribution</a>
+            <a href="https://github.com/passagemath" target="_blank" rel="noopener noreferrer">PassageMath</a>
+          </p>
+        </article>
+
+        <article class="project">
+          <div>
+            <h3>Latin Square Tools</h3>
+            <p>A toolkit for generating and analyzing Latin squares for combinatorial experimentation.</p>
+            <p class="meta">Algorithms, combinatorics</p>
+          </div>
+          <p class="project-links">
+            <a href="https://github.com/GanschowJosh/LatinSquareTools/" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </p>
+        </article>
+
+        <article class="project">
+          <div>
+            <h3>Prime Grid Labeling</h3>
+            <p>
+              A six-student project for labeling an <var>n</var> × <var>m</var> grid with the integers 1 through
+              <var>nm</var> so every neighboring pair is coprime. The result maps directly to prime graph labeling.
+            </p>
+            <p class="meta">Python, graph theory, Git</p>
+          </div>
+          <p class="project-links">
+            <a href="projects/prime-labeling-project.html">Details</a>
+            <a href="https://github.com/GanschowJosh/PrimeGridLabeling/" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </p>
+        </article>
+
+        <article class="project">
+          <div>
+            <h3>Visual Inductive Proof</h3>
+            <p>
+              A Matplotlib visualization of the inductive proof that a 2<sup>n</sup> × 2<sup>n</sup> board with one
+              square removed can be tiled with L-shaped triominoes.
+            </p>
+            <p class="meta">Python, Matplotlib, discrete mathematics</p>
+          </div>
+          <p class="project-links">
+            <a href="projects/visual-inductive-proof.html">Details</a>
+            <a href="https://github.com/GanschowJosh/DiscreteMath/blob/main/triominoes.py" target="_blank" rel="noopener noreferrer">Source</a>
+          </p>
+        </article>
+
+        <article class="project">
+          <div>
+            <h3>Competitive Programming</h3>
+            <p>
+              I keep solution repositories for Kattis, CSES, LeetCode, and Advent of Code. They currently include
+              110 accepted Kattis problems, 36 CSES solutions, 83 LeetCode solutions, and Advent of Code work from
+              2021 and 2023-2025.
+            </p>
+            <p class="meta">Python, algorithms, data structures, contest problem solving</p>
+          </div>
+          <p class="project-links">
+            <a href="https://github.com/GanschowJosh/Kattis" target="_blank" rel="noopener noreferrer">Kattis</a>
+            <a href="https://github.com/GanschowJosh/CSES" target="_blank" rel="noopener noreferrer">CSES</a>
+            <a href="https://github.com/GanschowJosh/Leetcode" target="_blank" rel="noopener noreferrer">LeetCode</a>
+            <a href="https://github.com/GanschowJosh/aoc" target="_blank" rel="noopener noreferrer">Advent of Code</a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section" id="resume" aria-labelledby="resume-title">
+      <h2 id="resume-title">Resume</h2>
+
+      <div class="resume-layout">
+        <div class="resume-main">
+          <section class="resume-group" aria-labelledby="experience-title">
+            <h3 id="experience-title">Experience</h3>
+            <article class="resume-item">
+              <header>
+                <div>
+                  <h4>Software Engineering Intern</h4>
+                  <p>Omnitech, Inc.</p>
+                </div>
+                <p class="date">May 2025-Present</p>
+              </header>
+              <ul>
+                <li>Developed multiple internal and external projects including a contract management system used across sales, accounting, project management, and engineering and an ERM system for a local non-profit rehabilitation center.</li>
+                <li>Built full-stack features with ASP.NET, C#, SQL, and TypeScript.</li>
+                <li>Implemented automated end-to-end and regression tests for enterprise applications.</li>
+                <li>Created Azure DevOps CI/CD pipelines and optimized SQL Server schemas and queries.</li>
+              </ul>
+            </article>
+            <article class="resume-item">
+              <header>
+                <div>
+                  <h4>GROWSTEM Student Mentor</h4>
+                  <p>Dakota State University</p>
+                </div>
+                <p class="date">Aug. 2024-Present</p>
+              </header>
+              <ul>
+                <li>Mentor GROWSTEM scholarship recipients and provide academic support and supplemental instruction.</li>
+                <li>Work with program coordinators to support student success.</li>
+              </ul>
+            </article>
+          </section>
+
+          <section class="resume-group" aria-labelledby="education-title">
+            <h3 id="education-title">Education</h3>
+            <article class="resume-item compact">
+              <header>
+                <div>
+                  <h4>BS in Computer Science and Mathematics</h4>
+                  <p>Dakota State University · Madison, South Dakota</p>
+                </div>
+                <p class="date">2023-2026</p>
+              </header>
+              <p>GPA: 3.96</p>
+            </article>
+            <article class="resume-item compact">
+              <header>
+                <div>
+                  <h4>MS in Computer Science</h4>
+                  <p>Dakota State University · 4+1 program</p>
+                </div>
+                <p class="date">2025-2027 anticipated</p>
+              </header>
+              <p>GPA: 4.0</p>
+              <p>Dual-credit coursework enables completion of the master's degree one year after the bachelor's degree.</p>
+            </article>
+          </section>
+
+          <section class="resume-group" aria-labelledby="leadership-title">
+            <h3 id="leadership-title">Leadership</h3>
+            <article class="resume-item compact">
+              <header>
+                <div>
+                  <h4>President, Competitive Programming Club</h4>
+                  <p>Dakota State University</p>
+                </div>
+                <p class="date">Aug. 2024–Present</p>
+              </header>
+              <ul>
+                <li>Lead weekly sessions on algorithms, data structures, and problem solving.</li>
+                <li>Led a team that qualified for the ICPC North America Championship.</li>
+                <li>Led a team that placed second in the DigiKey Collegiate Computing Competition.</li>
+              </ul>
+            </article>
+            <article class="resume-item compact">
+              <header>
+                <div>
+                  <h4>Leader, Math Club</h4>
+                  <p>Dakota State University</p>
+                </div>
+                <p class="date">Aug. 2024–Present</p>
+              </header>
+              <p>Host sessions on advanced mathematics and combinatorics.</p>
+            </article>
+          </section>
+        </div>
+
+        <aside class="resume-aside">
+          <section>
+            <h3>Skills</h3>
+            <p><strong>Languages:</strong> Python, C/C++, C#, SQL, TypeScript</p>
+            <p><strong>Engineering:</strong> ASP.NET, REST APIs, full-stack development, automated testing</p>
+            <p><strong>Tools:</strong> Git, Docker, Azure DevOps, SQL Server, CI/CD</p>
+            <p><strong>Areas:</strong> Algorithms, data structures, graph theory, combinatorics, competitive programming</p>
+            <p><strong>Open source:</strong> PassageMath maintainer and SageMath contributor</p>
+          </section>
+
+          <section>
+            <h3>Publication</h3>
+            <p><em>Small Antiperfect Steiner Triple Systems</em><br>First author, <em>Discrete Mathematics</em></p>
+            <p><a href="https://doi.org/10.1016/j.disc.2026.115061" target="_blank" rel="noopener noreferrer">DOI 10.1016/j.disc.2026.115061</a></p>
+          </section>
+
+          <section>
+            <h3>Coursework</h3>
+            <p>Data Structures, Object-Oriented Design, Systems Analysis, Discrete Mathematics, Combinatorial Designs, Linear Algebra, Game Theory, Statistics, Calculus, Number Theory and Cryptography, Assembly Language.</p>
+          </section>
+
+          <section>
+            <h3>Contact</h3>
+            <p><a href="mailto:ganschowjosh@gmail.com">ganschowjosh@gmail.com</a><br><a href="mailto:Joshua.Ganschow@trojans.dsu.edu">Joshua.Ganschow@trojans.dsu.edu</a></p>
+          </section>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <p>Joshua Ganschow</p>
+    <a href="#top">Back to top</a>
+  </footer>
 </body>
-
 </html>

@@ -100,6 +100,14 @@ August 2024–Present
 
 ## Projects
 
+### Thread-Safe Queue and Worker Pool
+
+CSC718 · C, POSIX threads, concurrency, systems programming
+
+A bounded producer-consumer queue and worker pool implemented in C. The project uses POSIX threads for concurrent job processing and includes correctness checks, performance timing, and worker statistics.
+
+- [GitHub repository](https://github.com/GanschowJosh/threadPool)
+
 ### SageMath and PassageMath
 
 Python · Open source · Mathematical software
@@ -200,12 +208,7 @@ Links:
 
 Python · Algorithms · Data structures
 
-Joshua maintains public solution repositories across several competitive-programming platforms:
-
-- Kattis: 110 accepted problems, spanning easy through hard difficulty.
-- CSES: 36 Python solutions from the CSES problem set.
-- LeetCode: 83 Python solution files covering arrays, graphs, trees, strings, dynamic programming, and other common algorithmic topics.
-- Advent of Code: 104 Python files across the 2021, 2023, 2024, and 2025 events.
+Joshua maintains public solution repositories for Kattis, CSES, LeetCode, and Advent of Code. The solutions cover arrays, graphs, trees, strings, dynamic programming, and other common algorithmic topics.
 
 This work supports his competitive-programming practice, club leadership, and preparation for contests including ICPC and DKC3.
 

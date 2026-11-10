@@ -4,16 +4,16 @@ This document consolidates the information that appeared across the portfolio be
 
 ## Profile
 
-Joshua Ganschow is a Computer Science and Mathematics student at Dakota State University with a strong background in competitive programming and algorithm design for combinatorics and graph theory. He enjoys building software, solving difficult algorithmic problems, and applying mathematics to software systems.
+Joshua Ganschow is a competitive programmer and Computer Science and Mathematics student at Dakota State University. He has qualified for the ICPC North America Championship (NAC) twice, most recently with a team he trained and captained. As president of DSU's Competitive Programming Club, he also trains other teams in algorithms, data structures, and contest problem solving. He builds full-stack software and works on algorithm design for combinatorics and graph theory.
 
-He is a PassageMath maintainer and a SageMath contributor.
+He has contributed multiple algorithms to SageMath and also helps maintain PassageMath.
 
 Primary areas of focus:
 
-- Full-stack software engineering
+- Competitive programming and team training
 - Algorithms and data structures
+- Full-stack software engineering
 - Graph theory and combinatorics
-- Competitive programming
 - Mathematical research and visualization
 - Open-source mathematical software
 
@@ -87,8 +87,8 @@ This is a 4+1 program. Dual-credit coursework during the final year of the bache
 
 August 2024–Present
 
-- Leads weekly meetings on algorithms, data structures, and problem solving.
-- Led and competed on a team that qualified for the ICPC North America Championship.
+- Qualified for the ICPC North America Championship (NAC) twice, most recently with a team he trained and captained.
+- Trains other club teams for programming contests and leads weekly meetings on algorithms, data structures, and problem solving.
 - Led and competed on a team that placed second in the DigiKey Collegiate Computing Competition (DKC3).
 
 ### Leader — Math Club, Dakota State University
@@ -108,13 +108,13 @@ A bounded producer-consumer queue and worker pool implemented in C. The project 
 
 - [GitHub repository](https://github.com/GanschowJosh/threadPool)
 
-### SageMath and PassageMath
+### SageMath Algorithm Contributions
 
 Python · Open source · Mathematical software
 
-Joshua contributed an implementation of Stinson's randomized hill-climbing algorithm for Steiner triple system generation to SageMath. The contribution added an optional algorithm parameter without changing the existing default behavior, preserving backward compatibility. It included tests and documentation and was merged on July 26, 2026.
+Joshua has contributed multiple algorithms to SageMath, including an implementation of Stinson's randomized hill-climbing algorithm for Steiner triple system generation. That contribution added an optional algorithm parameter without changing the existing default behavior, preserving backward compatibility. It included tests and documentation and was merged on July 26, 2026.
 
-Joshua also serves as a maintainer of PassageMath, the modular, pip-installable, Sage-compatible mathematical software distribution.
+Joshua also helps maintain PassageMath.
 
 - [Merged SageMath pull request #42510](https://github.com/sagemath/sage/pull/42510)
 - [PassageMath organization](https://github.com/passagemath)
@@ -208,7 +208,9 @@ Links:
 
 Python · Algorithms · Data structures
 
-Joshua maintains public solution repositories for Kattis, CSES, LeetCode, and Advent of Code. The solutions cover arrays, graphs, trees, strings, dynamic programming, and other common algorithmic topics.
+Joshua has qualified for the ICPC North America Championship (NAC) twice, most recently with a team he trained and captained. Through his leadership of DSU's Competitive Programming Club, he also trains other teams for programming contests and leads sessions on algorithms, data structures, and problem solving.
+
+He maintains public solution repositories for Kattis, CSES, LeetCode, and Advent of Code. The solutions cover arrays, graphs, trees, strings, dynamic programming, and other common algorithmic topics.
 
 This work supports his competitive-programming practice, club leadership, and preparation for contests including ICPC and DKC3.
 
